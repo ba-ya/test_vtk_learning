@@ -15,16 +15,31 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(VTK_path "D:/proj/framework/foundation/vtk/windows/lib/cmake/vtk-9.4")
 list(APPEND CMAKE_PREFIX_PATH "${VTK_path}")
 find_package(VTK REQUIRED)
+# target_link_libraries(${PROJECT_NAME} PRIVATE
+#   ${VTK_LIBRARIES}
+# )
+# if(VTK_VERSION VERSION_GREATER_EQUAL "9.0")
+#     target_link_libraries(${PROJECT_NAME} PRIVATE
+#         VTK::GUISupportQt
+#         VTK::RenderingOpenGL2
+#     )
+# endif()
 
 include_directories(
-        1/
+        examples/
+)
+
+set(EXAMPLE
+  examples/01cells.h
+  examples/01cells.cpp
 )
 
 set(PROJECT_SOURCES
         main.cpp
-        1/func1.cpp
-        1/func1.h
-        1/func1.ui
+        func1.cpp
+        func1.h
+        func1.ui
+        ${EXAMPLE}
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -50,8 +65,17 @@ else()
     endif()
 endif()
 
-target_link_libraries(test_vtk_learning PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(${PROJECT_NAME} PRIVATE
+  Qt${QT_VERSION_MAJOR}::Widgets
+  ${VTK_LIBRARIES}
+)
 
+if(VTK_VERSION VERSION_GREATER_EQUAL "9.0")
+    target_link_libraries( ${PROJECT_NAME} PRIVATE
+        VTK::GUISupportQt
+        VTK::RenderingOpenGL2
+    )
+endif()
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
