@@ -28,12 +28,19 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
        <item>
-        <widget class="QLabel" name="label_name">
-         <property name="text">
-          <string/>
+        <widget class="QLineEdit" name="lineEdit_name">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(240, 240, 240);
+border:none;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
          </property>
         </widget>
        </item>

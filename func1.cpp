@@ -1,6 +1,7 @@
 ﻿#include "func1.h"
 #include "./ui_func1.h"
 #include "01cells.h"
+#include "02helloworld.h"
 
 #include <QTimer>
 #include <QVTKOpenGLNativeWidget.h>
@@ -15,6 +16,7 @@ Func1::Func1(QWidget *parent)
     , ui(new Ui::Func1)
 {
     ui->setupUi(this);
+    setWindowTitle("vtk examples");
     init();
 }
 
@@ -36,10 +38,6 @@ void Func1::init()
     vtk_widget = new QVTKOpenGLNativeWidget(this);
     vtk_widget->setRenderWindow(renderWindow);
     ui->layout->addWidget(vtk_widget);
-
-    // QTimer::singleShot(10, this, [this]() {
-    //     init_cells();
-    // });
 
     init_examples();
 }
@@ -74,14 +72,14 @@ void Func1::init_examples()
 
             QString item_str = files.at(i);
             // 使用正则匹配 namespace 名称
-            QRegularExpression regex(R"(namespace\s*(\w+)\s*\{)");
+            static QRegularExpression regex(R"(namespace\s*(\w+)\s*\{)");
             QRegularExpressionMatch match = regex.match(content);
             if (match.hasMatch()) {
                 item_str += QString("(%1)").arg(match.captured(1));
             }
 
             table->setItem(i, 0, new QTableWidgetItem(item_str));
-            qDebug().noquote() << item_str;
+            // qDebug().noquote() << item_str;
         }
     };
     QStringList filters = { "*.h"};
@@ -90,10 +88,10 @@ void Func1::init_examples()
     init_table(ui->table, base, list_ex);
 
     connect(ui->table, &QTableWidget::itemDoubleClicked, this, [this](QTableWidgetItem *item) {
-        QRegularExpression reg("\\((\\w+)\\)");
+        static QRegularExpression reg("\\((\\w+)\\)");
         QRegularExpressionMatch match = reg.match(item->text().trimmed());
         if (match.hasMatch()) {
-            ui->label_name->setText(item->text());
+            ui->lineEdit_name->setText(item->text());
             do_something(match.captured(1));
             return;
         }
@@ -106,6 +104,8 @@ void Func1::do_something(QString name_class)
     clear();
     if (name_class == "ExampleCells2d") {
         ExampleCells2d::Draw(m_render);
+    } else if (name_class == "HelloWorld3d") {
+        HelloWorld3d::Draw(m_render);
     } else {
         return;
     }
@@ -140,7 +140,7 @@ void Func1::on_btn_reset_camera_released()
 
 void Func1::on_btn_clear_released()
 {
-    ui->label_name->clear();
+    ui->lineEdit_name->clear();
     clear();
     do_render();
 }

@@ -26,12 +26,15 @@ find_package(VTK REQUIRED)
 # endif()
 
 include_directories(
-        examples/
+  ./
+  examples/
 )
 
 set(EXAMPLE
   examples/01cells.h
   examples/01cells.cpp
+  examples/02helloworld.h
+  examples/02helloworld.cpp
 )
 
 set(PROJECT_SOURCES
@@ -39,6 +42,7 @@ set(PROJECT_SOURCES
         func1.cpp
         func1.h
         func1.ui
+        common.h
         ${EXAMPLE}
         icon.rc
 )
