@@ -40,6 +40,7 @@ set(PROJECT_SOURCES
         func1.h
         func1.ui
         ${EXAMPLE}
+        icon.rc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

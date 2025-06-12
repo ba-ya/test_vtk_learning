@@ -24,6 +24,7 @@ public:
 
 private slots:
     void on_btn_reset_camera_released();
+    void on_btn_clear_released();
 
 private:
     void init();
@@ -32,8 +33,8 @@ private:
     void init_cells();
 
     void clear();
-    void do_render();
     void reset_camera();
+    void do_render();
 
 private:
     Ui::Func1 *ui;

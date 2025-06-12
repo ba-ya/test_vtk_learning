@@ -93,6 +93,7 @@ void Func1::init_examples()
         QRegularExpression reg("\\((\\w+)\\)");
         QRegularExpressionMatch match = reg.match(item->text().trimmed());
         if (match.hasMatch()) {
+            ui->label_name->setText(item->text());
             do_something(match.captured(1));
             return;
         }
@@ -108,18 +109,13 @@ void Func1::do_something(QString name_class)
     } else {
         return;
     }
+    reset_camera();
     do_render();
 }
 
 void Func1::clear()
 {
     m_render->RemoveAllViewProps();
-}
-
-void Func1::do_render()
-{
-    reset_camera();
-    vtk_widget->renderWindow()->Render();
 }
 
 void Func1::reset_camera()
@@ -131,8 +127,21 @@ void Func1::reset_camera()
     m_render->ResetCamera();  // 重置相机以包含整个图形
 }
 
+void Func1::do_render()
+{
+    vtk_widget->renderWindow()->Render();
+}
+
 void Func1::on_btn_reset_camera_released()
 {
+    reset_camera();
+    do_render();
+}
+
+void Func1::on_btn_clear_released()
+{
+    ui->label_name->clear();
+    clear();
     do_render();
 }
 
