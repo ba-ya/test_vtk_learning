@@ -2,6 +2,7 @@
 #include "./ui_func1.h"
 #include "01cells.h"
 #include "02helloworld.h"
+#include "03simple_operations.h"
 
 #include <QTimer>
 #include <QVTKOpenGLNativeWidget.h>
@@ -106,7 +107,10 @@ void Func1::do_something(QString name_class)
         ExampleCells2d::Draw(m_render);
     } else if (name_class == "HelloWorld3d") {
         HelloWorld3d::Draw(m_render);
+    } else if (name_class == "SimpleOperations") {
+        SimpleOperations::Draw(m_render);
     } else {
+        qDebug() << name_class << "not achive";
         return;
     }
     reset_camera();

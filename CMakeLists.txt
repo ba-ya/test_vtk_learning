@@ -35,6 +35,8 @@ set(EXAMPLE
   examples/01cells.cpp
   examples/02helloworld.h
   examples/02helloworld.cpp
+  examples/03simple_operations.h
+  examples/03simple_operations.cpp
 )
 
 set(PROJECT_SOURCES

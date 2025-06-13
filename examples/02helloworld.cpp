@@ -8,9 +8,10 @@
 
 void HelloWorld3d::Draw(vtkRenderer *renderer)
 {
+    // 绘制圆柱体
     auto cylinder = vtkSmartPointer<vtkCylinderSource>::New();
-    // 每个面的顶点数目
-    cylinder->SetResolution(6);
+    // 圆柱体精度,越大越圆
+    cylinder->SetResolution(8);
 
     auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
     mapper->SetInputConnection(cylinder->GetOutputPort());

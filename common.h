@@ -3,6 +3,9 @@
 
 #include <QRegularExpression>
 #include <QString.h>
+#include <vtkActor.h>
+#include <vtkSmartPointer.h>
+
 static std::tuple<double, double, double> adj_rgb(QString hex_rgb) {
     static QRegularExpression reg("^#([\\da-fA-F]{2})([\\da-fA-F]{2})([\\da-fA-F]{2})");
     auto match = reg.match(hex_rgb);
@@ -19,4 +22,9 @@ static std::tuple<double, double, double> adj_rgb(QString hex_rgb) {
     return {rgb[0], rgb[1], rgb[2]};
 }
 
+static vtkSmartPointer<vtkActor> draw_point() {
+
+    auto actor = vtkSmartPointer<vtkActor>::New();
+    return actor;
+}
 #endif // COMMON_H
