@@ -96,4 +96,4 @@ void Func1::reset_camera()
 
 下面相机的位置应该在z轴正半轴上,看向焦点
 
-![image-20250611150623511](README.assets/image-20250611150623511.png)
+![image-20250611150623511](readme_learn.assets/image-20250611150623511.png)
