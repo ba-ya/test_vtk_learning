@@ -1,5 +1,4 @@
 ﻿#include "00headers.h"
-#include "common.h"
 
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
@@ -33,6 +32,4 @@ void Axes3d::Draw(vtkRenderer *renderer)
     axes->SetUserTransform(transform);
 
     renderer->AddActor(axes);
-
-
 }

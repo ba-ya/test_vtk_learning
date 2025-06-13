@@ -27,7 +27,7 @@ Func1::~Func1()
 void Func1::init()
 {
     m_render = vtkSmartPointer<vtkRenderer>::New();
-    m_render->SetBackground(1, 1, 1);
+    // m_render->SetBackground(1, 1, 1);
 
     auto renderWindow = vtkSmartPointer<vtkGenericOpenGLRenderWindow>::New();
     renderWindow->AddRenderer(m_render);
@@ -102,6 +102,8 @@ void Func1::do_something(QString name_class)
         SimpleOperations::Draw(m_render);
     } else if (name_class == "Axes3d") {
         Axes3d::Draw(m_render);
+    } else if (name_class == "ColorLine2d") {
+        ColorLine2d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

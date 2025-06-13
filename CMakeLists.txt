@@ -30,20 +30,25 @@ include_directories(
   examples/
 )
 
+set(MAINWIDGET
+  func1.cpp
+  func1.h
+  func1.ui
+)
+
 set(EXAMPLE
   examples/00headers.h
   examples/01cells.cpp
   examples/02helloworld.cpp
   examples/03simple_operations.cpp
   examples/04axes.cpp
+  examples/05color_lines.cpp
 )
 
 set(PROJECT_SOURCES
         main.cpp
-        func1.cpp
-        func1.h
-        func1.ui
         common.h
+        ${MAINWIDGET}
         ${EXAMPLE}
         icon.rc
 )
