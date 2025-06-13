@@ -1,8 +1,6 @@
 ﻿#include "func1.h"
 #include "./ui_func1.h"
-#include "01cells.h"
-#include "02helloworld.h"
-#include "03simple_operations.h"
+#include "00headers.h"
 
 #include <QTimer>
 #include <QVTKOpenGLNativeWidget.h>
@@ -52,7 +50,29 @@ void Func1::init_cells()
 
 void Func1::init_examples()
 {
-    auto &&init_table = [](QTableWidget *table, QString dir, QStringList files) {
+    auto &&get_class_name = [this]() {
+        QStringList names;
+        QString base = QDir(QDir::currentPath().remove("_build_release")).absoluteFilePath("examples");
+        auto file_path = QDir(base).absoluteFilePath("00headers.h");
+        QFile file(file_path);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            qDebug() << file_path << "open fail";
+            return names;
+        }
+        QTextStream in(&file);
+        QString content = in.readAll();
+        file.close();
+
+        // 使用正则匹配 namespace 名称
+        static QRegularExpression regex(R"(namespace\s*(\w+)\s*\{)");
+        QRegularExpressionMatchIterator i = regex.globalMatch(content);
+        while (i.hasNext()) {
+            names << i.next().captured(1);
+        }
+        return names;
+    };
+
+    auto &&init_table = [](QTableWidget *table, QStringList files) {
         table->setEditTriggers(QAbstractItemView::NoEditTriggers);
         table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
@@ -60,43 +80,14 @@ void Func1::init_examples()
         table->setRowCount(cnt_row);
         table->setColumnCount(1);
         for (int i = 0; i < cnt_row; ++i) {
-            auto file_path = QDir(dir).absoluteFilePath(files.at(i));
-
-            QFile file(file_path);
-            if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-                qDebug() << file_path << "open fail";
-                return;
-            }
-            QTextStream in(&file);
-            QString content = in.readAll();
-            file.close();
-
-            QString item_str = files.at(i);
-            // 使用正则匹配 namespace 名称
-            static QRegularExpression regex(R"(namespace\s*(\w+)\s*\{)");
-            QRegularExpressionMatch match = regex.match(content);
-            if (match.hasMatch()) {
-                item_str += QString("(%1)").arg(match.captured(1));
-            }
-
-            table->setItem(i, 0, new QTableWidgetItem(item_str));
-            // qDebug().noquote() << item_str;
+            table->setItem(i, 0, new QTableWidgetItem(files.at(i)));
         }
     };
-    QStringList filters = { "*.h"};
-    QString base = QDir(QDir::currentPath().remove("_build_release")).absoluteFilePath("examples");
-    auto list_ex = QDir(base).entryList(filters, QDir::Files, QDir::Name);
-    init_table(ui->table, base, list_ex);
+    init_table(ui->table, get_class_name());
 
     connect(ui->table, &QTableWidget::itemDoubleClicked, this, [this](QTableWidgetItem *item) {
-        static QRegularExpression reg("\\((\\w+)\\)");
-        QRegularExpressionMatch match = reg.match(item->text().trimmed());
-        if (match.hasMatch()) {
-            ui->lineEdit_name->setText(item->text());
-            do_something(match.captured(1));
-            return;
-        }
-        qDebug() << item->text() << "not match";
+        ui->lineEdit_name->setText(QString("%1, %2").arg(item->row()+ 1).arg(item->text()));
+        do_something(item->text());
     });
 }
 
@@ -109,6 +100,8 @@ void Func1::do_something(QString name_class)
         HelloWorld3d::Draw(m_render);
     } else if (name_class == "SimpleOperations") {
         SimpleOperations::Draw(m_render);
+    } else if (name_class == "Axes3d") {
+        Axes3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

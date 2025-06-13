@@ -1,12 +1,12 @@
 [TOC]
 
-# 01cells.h(ExampleCells2d)
+# 1, cells.h(ExampleCells2d)
 
 显示10*10的单元格
 
 ![image-20250612093016429](readme_list.assets/image-20250612093016429.png)
 
-# 02helloworld.h(HelloWorld3d)
+# 2, helloworld.h(HelloWorld3d)
 
  cylinder->SetResolution(6);
 
@@ -14,8 +14,14 @@
 
 ![image-20250612113155477](readme_list.assets/image-20250612113155477.png)
 
-### 
+# 3, SimpleOperations
 
-一些计算,没有图像,在输出查看
+一些计算,没有图像,在输出查看,具体看代码
 
 ![image-20250612135538130](readme_list.assets/image-20250612135538130.png)
+
+![image-20250613132634233](readme_list.assets/image-20250613132634233.png)
+
+# 4, Axes3d
+
+![image-20250613133031469](readme_list.assets/image-20250613133031469.png)

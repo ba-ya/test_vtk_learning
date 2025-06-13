@@ -31,12 +31,11 @@ include_directories(
 )
 
 set(EXAMPLE
-  examples/01cells.h
+  examples/00headers.h
   examples/01cells.cpp
-  examples/02helloworld.h
   examples/02helloworld.cpp
-  examples/03simple_operations.h
   examples/03simple_operations.cpp
+  examples/04axes.cpp
 )
 
 set(PROJECT_SOURCES
