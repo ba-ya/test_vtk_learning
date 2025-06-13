@@ -51,20 +51,30 @@ border:none;</string>
      </widget>
      <widget class="QWidget" name="widget" native="true">
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="0">
-        <widget class="QTableWidget" name="table"/>
-       </item>
-       <item row="1" column="0" colspan="2">
-        <widget class="QPushButton" name="btn_reset_camera">
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="checkBox_clear_before">
          <property name="text">
-          <string>重置相机</string>
+          <string>清除之前的绘制</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="QPushButton" name="btn_clear">
          <property name="text">
           <string>清空</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QTableWidget" name="table"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btn_reset_camera">
+         <property name="text">
+          <string>重置相机</string>
          </property>
         </widget>
        </item>

@@ -43,6 +43,7 @@ set(EXAMPLE
   examples/03simple_operations.cpp
   examples/04axes.cpp
   examples/05color_lines.cpp
+  examples/06cube.cpp
 )
 
 set(PROJECT_SOURCES

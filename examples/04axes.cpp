@@ -9,6 +9,7 @@
 
 void Axes3d::Draw(vtkRenderer *renderer)
 {
+#if 0
     // sphere 球体
     auto sphere_source = vtkSmartPointer<vtkSphereSource>::New();
     sphere_source->SetCenter(0.0, 0.0, 0.0);
@@ -23,10 +24,10 @@ void Axes3d::Draw(vtkRenderer *renderer)
     // sphere_actor->GetProperty()->SetColor(r, g, b);
 
     renderer->AddActor(sphere_actor);
-
+#endif
     // 轴
     auto transform = vtkSmartPointer<vtkTransform>::New();
-    transform->Translate(1.0, 1.0, 0.0);// 平移
+    transform->Translate(0.0, 0.0, 0.0);// 平移
 
     auto axes = vtkSmartPointer<vtkAxesActor>::New();
     axes->SetUserTransform(transform);

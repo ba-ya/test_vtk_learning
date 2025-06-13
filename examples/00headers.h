@@ -4,15 +4,15 @@
 #include "common.h"
 #include <vtkRenderer.h>
 
+namespace SimpleOperations {
+void Draw(vtkRenderer* renderer);
+}
+
 namespace ExampleCells2d {
 void Draw(vtkRenderer* renderer);
 }
 
-namespace HelloWorld3d {
-void Draw(vtkRenderer* renderer);
-}
-
-namespace SimpleOperations {
+namespace Cylinder3d {
 void Draw(vtkRenderer* renderer);
 }
 
@@ -21,6 +21,10 @@ void Draw(vtkRenderer* renderer);
 }
 
 namespace ColorLine2d {
+void Draw(vtkRenderer* renderer);
+}
+
+namespace Cube3d {
 void Draw(vtkRenderer* renderer);
 }
 

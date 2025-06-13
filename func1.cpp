@@ -93,17 +93,21 @@ void Func1::init_examples()
 
 void Func1::do_something(QString name_class)
 {
-    clear();
+    if (ui->checkBox_clear_before->isChecked()) {
+        clear();
+    }
     if (name_class == "ExampleCells2d") {
         ExampleCells2d::Draw(m_render);
-    } else if (name_class == "HelloWorld3d") {
-        HelloWorld3d::Draw(m_render);
+    } else if (name_class == "Cylinder3d") {
+        Cylinder3d::Draw(m_render);
     } else if (name_class == "SimpleOperations") {
         SimpleOperations::Draw(m_render);
     } else if (name_class == "Axes3d") {
         Axes3d::Draw(m_render);
     } else if (name_class == "ColorLine2d") {
         ColorLine2d::Draw(m_render);
+    } else if (name_class == "Cube3d") {
+        Cube3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

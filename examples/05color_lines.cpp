@@ -12,9 +12,12 @@
 
 void ColorLine2d::Draw(vtkRenderer *renderer)
 {
+    // 先构建ploydata, 确定是要画线
+    auto line_poly_data = vtkSmartPointer<vtkPolyData>::New();
+
     double origin[3] = {0.0, 0.0, 0.0};
-    double p0[3] = {1.0, 0.0, 0.0};
-    double p1[3] = {0.0, 1.0, 0.0};
+    double p0[3] = {10.0, 0.0, 0.0};
+    double p1[3] = {0.0, 10.0, 0.0};
 
     // 点数据
     auto pts = vtkSmartPointer<vtkPoints>::New();
@@ -35,18 +38,17 @@ void ColorLine2d::Draw(vtkRenderer *renderer)
     lines->InsertNextCell(line0);
     lines->InsertNextCell(line1);
 
-    // 与polydata链接起来
-    auto line_poly_data = vtkSmartPointer<vtkPolyData>::New();
-    line_poly_data->SetPoints(pts);
-    line_poly_data->SetLines(lines);
-
     // color
     auto named_colors = vtkSmartPointer<vtkNamedColors>::New();
     auto colors = vtkSmartPointer<vtkUnsignedCharArray>::New();
     colors->SetNumberOfComponents(3);
-    colors->InsertNextTypedTuple(named_colors->GetColor3ub("Tomato").GetData());
+    // InsertNextTupleValue现在是InsertNextTypedTuple
     colors->InsertNextTypedTuple(named_colors->GetColor3ub("Mint").GetData());
+    colors->InsertNextTypedTuple(named_colors->GetColor3ub("Tomato").GetData());
 
+    // 与polydata链接起来
+    line_poly_data->SetPoints(pts);
+    line_poly_data->SetLines(lines);
     line_poly_data->GetCellData()->SetScalars(colors);
 
     auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();

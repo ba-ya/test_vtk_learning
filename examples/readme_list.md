@@ -29,3 +29,9 @@
 # 5, ColorLine2d
 
 ![image-20250613150125935](readme_list.assets/image-20250613150125935.png)
+
+# 6, Cube3d
+
+把sample op移到第一个了,免得不小心点到
+
+![image-20250613170308882](readme_list.assets/image-20250613170308882.png)

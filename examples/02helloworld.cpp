@@ -5,7 +5,7 @@
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
 
-void HelloWorld3d::Draw(vtkRenderer *renderer)
+void Cylinder3d::Draw(vtkRenderer *renderer)
 {
     // 绘制圆柱体
     auto cylinder = vtkSmartPointer<vtkCylinderSource>::New();
