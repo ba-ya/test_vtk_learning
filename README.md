@@ -1,12 +1,23 @@
-[TOC]
+# **目录** 
 
-# 1, cells.h(ExampleCells2d)
+- [1, cells.h](#1, cells.h)
+- [2, helloworld.h](#2, helloworld.h)
+- [3, SimpleOperations](#3, SimpleOperations)
+- [4, Axes3d](#4, Axes3d)
+- [5,ColorLine2d](#5, ColorLine2d)
+- [6, Cube3d](#6, Cube3d)
+
+# 1, cells.h
+
+[回到顶部](#目录)
 
 显示10*10的单元格
 
 ![image-20250612093016429](README.assets/image-20250612093016429.png)
 
-# 2, helloworld.h(HelloWorld3d)
+# 2, helloworld.h
+
+[回到顶部](#目录)
 
  cylinder->SetResolution(6);
 
@@ -16,22 +27,42 @@
 
 # 3, SimpleOperations
 
+[回到顶部](#目录)
+
 一些计算,没有图像,在输出查看,具体看代码
 
-![image-20250612135538130](README.assets/image-20250612135538130.png)
+![image-20250616090333140](README.assets/image-20250616090333140.png)
 
-![image-20250613132634233](README.assets/image-20250613132634233.png)
+![image-20250616090426010](README.assets/image-20250616090426010.png)
+
+![image-20250616090507642](README.assets/image-20250616090507642.png)
+
+![image-20250616090603652](README.assets/image-20250616090603652.png)
+
+![image-20250616090619741](README.assets/image-20250616090619741.png)
+
+![image-20250616090728487](README.assets/image-20250616090728487.png)
+
+![image-20250616092646143](README.assets/image-20250616092646143.png)
 
 # 4, Axes3d
+
+[回到顶部](#目录)
 
 ![image-20250613133031469](README.assets/image-20250613133031469.png)
 
 # 5, ColorLine2d
 
+[回到顶部](#目录)
+
 ![image-20250613150125935](README.assets/image-20250613150125935.png)
 
 # 6, Cube3d
 
+[回到顶部](#目录)
+
 把sample op移到第一个了,免得不小心点到
 
-![image-20250613170308882](README.assets/image-20250613170308882.png)
+两种形式生成cube,一种自己给点给面(polydata),另一种是直接用自带的source(vtkCubeSource)
+
+![image-20250616092853225](README.assets/image-20250616092853225.png)

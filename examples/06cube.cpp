@@ -1,8 +1,12 @@
 ﻿#include "00headers.h"
 #include <vtkFloatArray.h>
+#include <vtkNamedColors.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkPointData.h>
+#include <vtkCubeSource.h>
+#include <vtkProperty.h>
+#include <vtkTransform.h>
 
 void Cube3d::Draw(vtkRenderer *renderer)
 {
@@ -60,4 +64,24 @@ void Cube3d::Draw(vtkRenderer *renderer)
     actor->SetMapper(mapper);
 
     renderer->AddActor(actor);
+
+    // 使用pipeline
+    auto cube_1 = vtkSmartPointer<vtkCubeSource>::New();
+    cube_1->Update();
+
+    auto mapper_1 = vtkSmartPointer<vtkPolyDataMapper>::New();
+    mapper_1->SetInputData(cube_1->GetOutput());
+
+    auto actor_1 = vtkSmartPointer<vtkActor>::New();
+    actor_1->SetMapper(mapper_1);
+
+    auto colors = vtkSmartPointer<vtkNamedColors>::New();
+    actor_1->GetProperty()->SetColor(colors->GetColor3d("Banana").GetData());
+
+    auto transform = vtkSmartPointer<vtkTransform>::New();
+    transform->Translate(-0.5, 0.5, 0.5);
+    actor_1->SetUserTransform(transform);
+
+    renderer->AddActor(actor_1);
+
 }
