@@ -44,6 +44,7 @@ set(EXAMPLE
   examples/04axes.cpp
   examples/05color_lines.cpp
   examples/06cube.cpp
+  examples/07dodecahedron.cpp
 )
 
 set(PROJECT_SOURCES

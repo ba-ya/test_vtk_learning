@@ -108,6 +108,8 @@ void Func1::do_something(QString name_class)
         ColorLine2d::Draw(m_render);
     } else if (name_class == "Cube3d") {
         Cube3d::Draw(m_render);
+    } else if (name_class == "Dodecahedron3d") {
+        Dodecahedron3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

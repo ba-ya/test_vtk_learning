@@ -28,4 +28,8 @@ namespace Cube3d {
 void Draw(vtkRenderer* renderer);
 }
 
+namespace Dodecahedron3d {
+void Draw(vtkRenderer* renderer);
+}
+
 #endif // _1_2D_CELLS_H

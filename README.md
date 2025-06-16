@@ -4,6 +4,7 @@
 - [4, Axes3d](#4-axes3d)
 - [5, ColorLine2d](#5-colorline2d)
 - [6, Cube3d](#6-cube3d)
+- [7, Dodecahedron3d](#7-Dodecahedron3d)
 
 # tip
 
@@ -68,3 +69,9 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 两种形式生成cube,一种自己给点给面(polydata),另一种是直接用自带的source(vtkCubeSource)
 
 ![image-20250616092853225](README.assets/image-20250616092853225.png)
+
+# 7, Dodecahedron3d
+
+[回到顶部](#tip)
+
+![image-20250616130742374](README.assets/image-20250616130742374.png)
