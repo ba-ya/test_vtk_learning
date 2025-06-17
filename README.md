@@ -7,6 +7,7 @@
 - [5, ColorLine2d](#5-colorline2d)
 - [6, Cube3d](#6-cube3d)
 - [7, Dodecahedron3d](#7-Dodecahedron3d)
+- [8, EllipticalCylinder3d](#8-EllipticalCylinder3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -75,3 +76,9 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 [回到顶部](#tip)
 
 ![image-20250616130742374](README.assets/image-20250616130742374.png)
+
+# 8, EllipticalCylinder3d
+
+[回到顶部](#tip)
+
+![image-20250617160516692](README.assets/image-20250617160516692.png)

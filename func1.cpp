@@ -110,6 +110,8 @@ void Func1::do_something(QString name_class)
         Cube3d::Draw(m_render);
     } else if (name_class == "Dodecahedron3d") {
         Dodecahedron3d::Draw(m_render);
+    } else if (name_class == "EllipticalCylinder3d") {
+        EllipticalCylinder3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;
