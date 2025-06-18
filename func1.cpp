@@ -9,6 +9,7 @@
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
 #include <QDir>
+#include <vtkNamedColors.h>
 
 Func1::Func1(QWidget *parent)
     : QWidget(parent)
@@ -27,7 +28,8 @@ Func1::~Func1()
 void Func1::init()
 {
     m_render = vtkSmartPointer<vtkRenderer>::New();
-    // m_render->SetBackground(1, 1, 1);
+    auto colors = vtkSmartPointer<vtkNamedColors>::New();
+    m_render->SetBackground(colors->GetColor3d("SlateGray").GetData());
 
     auto renderWindow = vtkSmartPointer<vtkGenericOpenGLRenderWindow>::New();
     renderWindow->AddRenderer(m_render);
