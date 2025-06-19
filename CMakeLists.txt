@@ -46,6 +46,7 @@ set(EXAMPLE
   examples/06cube.cpp
   examples/07dodecahedron.cpp
   examples/08EllipticalCylinder.cpp
+  examples/09GeometricObjectsDemo.cpp
 )
 
 set(PROJECT_SOURCES

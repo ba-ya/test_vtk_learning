@@ -27,14 +27,7 @@ Func1::~Func1()
 
 void Func1::init()
 {
-    m_render = vtkSmartPointer<vtkRenderer>::New();
-    auto colors = vtkSmartPointer<vtkNamedColors>::New();
-    m_render->SetBackground(colors->GetColor3d("SlateGray").GetData());
-
     auto renderWindow = vtkSmartPointer<vtkGenericOpenGLRenderWindow>::New();
-    renderWindow->AddRenderer(m_render);
-    // 禁止交互
-    // renderWindow->SetInteractor(nullptr);
 
     vtk_widget = new QVTKOpenGLNativeWidget(this);
     vtk_widget->setRenderWindow(renderWindow);
@@ -43,11 +36,24 @@ void Func1::init()
     init_examples();
 }
 
-void Func1::init_cells()
+void Func1::resize_render(int count)
 {
-    clear();
-    ExampleCells2d::Draw(m_render);
-    do_render();
+    for (auto &render : renders) {
+        vtk_widget->renderWindow()->RemoveRenderer(render);
+    }
+    renders.clear();
+    auto colors = vtkSmartPointer<vtkNamedColors>::New();
+    std::vector<double *> color_list = {
+        colors->GetColor3d("SlateGray").GetData(),
+        colors->GetColor3d("DarkSlateGray").GetData(),
+    };
+    for (int i = 0; i < count; ++i) {
+        auto render = vtkSmartPointer<vtkRenderer>::New();
+        render->SetBackground(color_list.at(i % color_list.size()));
+
+        vtk_widget->renderWindow()->AddRenderer(render);
+        renders.push_back(render);
+    }
 }
 
 void Func1::init_examples()
@@ -97,7 +103,13 @@ void Func1::do_something(QString name_class)
 {
     if (ui->checkBox_clear_before->isChecked()) {
         clear();
+        do_render();
     }
+    int size = 1;
+    if (renders.size() != size) {
+        resize_render(size);
+    }
+    auto m_render = renders[0];
     if (name_class == "ExampleCells2d") {
         ExampleCells2d::Draw(m_render);
     } else if (name_class == "Cylinder3d") {
@@ -114,6 +126,9 @@ void Func1::do_something(QString name_class)
         Dodecahedron3d::Draw(m_render);
     } else if (name_class == "EllipticalCylinder3d") {
         EllipticalCylinder3d::Draw(m_render);
+    } else if (name_class == "GeometricObjectsDemo3d") {
+        resize_render(8);
+        GeometricObjectsDemo3d::Draw(renders);
     } else {
         qDebug() << name_class << "not achive";
         return;
@@ -124,16 +139,21 @@ void Func1::do_something(QString name_class)
 
 void Func1::clear()
 {
-    m_render->RemoveAllViewProps();
+    for (auto render : renders) {
+        render->RemoveAllViewProps();
+    }
 }
 
 void Func1::reset_camera()
 {
-    auto camera = m_render->GetActiveCamera();
-    camera->SetPosition(0, 0, 600);
-    camera->SetViewUp(0, 1, 0);
-    camera->SetFocalPoint(0, 0, 0);
-    m_render->ResetCamera();  // 重置相机以包含整个图形
+    for (auto render : renders) {
+        auto camera = render->GetActiveCamera();
+        camera->SetPosition(0, 0, 600);
+        camera->SetViewUp(0, 1, 0);
+        camera->SetFocalPoint(0, 0, 0);
+        render->ResetCamera();
+        render->ResetCameraClippingRange();
+    }
 }
 
 void Func1::do_render()

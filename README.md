@@ -1,13 +1,14 @@
 # tip
 
-- [1, ExampleCells2d](#1-examplecells2d)
-- [2, Cylinder3d](#2-cylinder3d)
-- [3, SimpleOperations](#3-simpleoperations)
-- [4, Axes3d](#4-axes3d)
-- [5, ColorLine2d](#5-colorline2d)
-- [6, Cube3d](#6-cube3d)
-- [7, Dodecahedron3d](#7-Dodecahedron3d)
-- [8, EllipticalCylinder3d](#8-EllipticalCylinder3d)
+- 1, [ExampleCells2d](#1-examplecells2d)
+- 2, [Cylinder3d](#2-cylinder3d)
+- 3, [SimpleOperations](#3-simpleoperations)
+- 4, [Axes3d](#4-axes3d)
+- 5, [ColorLine2d](#5-colorline2d)
+- 6, [Cube3d](#6-cube3d)
+- 7, [Dodecahedron3d](#7-Dodecahedron3d)
+- 8, [EllipticalCylinder3d](#8-EllipticalCylinder3d)
+- 9, [GeometricObjectsDemo3d](#9-GeometricObjectsDemo3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -86,3 +87,9 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 添加了箭头
 
 ![image-20250618100811640](README.assets/image-20250618100811640.png)
+
+# 9, GeometricObjectsDemo3d
+
+[回到顶部](#tip)
+
+![image-20250619131925877](README.assets/image-20250619131925877.png)

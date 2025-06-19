@@ -28,9 +28,9 @@ private slots:
 
 private:
     void init();
+    void resize_render(int count);
     void init_examples();
     void do_something(QString name_class);
-    void init_cells();
 
     void clear();
     void reset_camera();
@@ -40,6 +40,6 @@ private:
     Ui::Func1 *ui;
 
     QVTKOpenGLNativeWidget *vtk_widget;
-    vtkSmartPointer<vtkRenderer> m_render;
+    std::vector<vtkSmartPointer<vtkRenderer>> renders;
 };
 #endif // FUNC1_H
