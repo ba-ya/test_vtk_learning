@@ -45,6 +45,11 @@ void GeometricObjectsDemo3d::Draw(std::vector<vtkSmartPointer<vtkRenderer> > ren
 
     // 准备 mapper 和 actor
     for (int i = 0; i < geometric_object_sources.size(); ++i) {
+        // vtkSphereSource 等数据源类（vtkPolyDataAlgorithm 的子类）
+        // 内部维护着输出数据结构（比如点、面、拓扑等），
+        // 但这些数据默认是惰性计算的
+        // 需要通过Update()强制生成几何数据
+        // 不过如果是mapper->SetInputConnection(xxSource->GetOutputPort())这样使用,可以省略,Render的时候会自动Update()
         geometric_object_sources[i]->Update();
 
         mappers.push_back(vtkSmartPointer<vtkPolyDataMapper>::New());

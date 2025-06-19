@@ -40,6 +40,8 @@ namespace GeometricObjectsDemo3d {
 void Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders);
 }
 
-
+namespace PlaneSourceDemo3d {
+void Draw(vtkRenderer* renderer);
+}
 
 #endif // _1_2D_CELLS_H
