@@ -21,7 +21,7 @@ void Cylinder3d::Draw(vtkRenderer *renderer)
     auto colors = vtkSmartPointer<vtkNamedColors>::New();
     actor->GetProperty()->SetColor(colors->GetColor3d("Tomato").GetData());
 #else
-    auto [r, g, b] = adj_rgb("#c24b36");
+    auto [r, g, b] = Helper::adj_rgb("#c24b36");
     actor->GetProperty()->SetColor(r, g, b);
 #endif
 

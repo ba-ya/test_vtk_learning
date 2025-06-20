@@ -48,6 +48,7 @@ set(EXAMPLE
   examples/08EllipticalCylinder.cpp
   examples/09GeometricObjectsDemo.cpp
   examples/10PlaneSourceDemo.cpp
+  examples/11Planes.cpp
 )
 
 set(PROJECT_SOURCES

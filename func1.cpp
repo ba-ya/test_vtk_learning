@@ -131,7 +131,10 @@ void Func1::do_something(QString name_class)
         GeometricObjectsDemo3d::Draw(renders);
     } else if (name_class == "PlaneSourceDemo3d") {
         PlaneSourceDemo3d::Draw(m_render);
-    } else {
+    } else if (name_class == "Planes3d") {
+        resize_render(2);
+        Planes3d::Draw(renders);
+    }else {
         qDebug() << name_class << "not achive";
         return;
     }
