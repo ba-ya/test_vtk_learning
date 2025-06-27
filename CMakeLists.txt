@@ -50,6 +50,7 @@ set(EXAMPLE
   examples/10PlaneSourceDemo.cpp
   examples/11Planes.cpp
   examples/12ShrinkCube.cpp
+  examples/13SourceObjectsDemo.cpp
 )
 
 set(PROJECT_SOURCES

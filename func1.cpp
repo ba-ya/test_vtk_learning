@@ -136,6 +136,9 @@ void Func1::do_something(QString name_class)
         Planes3d::Draw(renders);
     } else if (name_class == "ShrinkCube3d") {
         ShrinkCube3d::Draw(m_render);
+    } else if (name_class == "SourceObjectsDemo3d") {
+        resize_render(9);
+        SourceObjectsDemo3d::Draw(renders);
     } else {
         qDebug() << name_class << "not achive";
         return;
