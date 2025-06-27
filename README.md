@@ -11,6 +11,7 @@
 - 9, [GeometricObjectsDemo3d](#9-GeometricObjectsDemo3d)
 - 10, [PlaneSourceDemo3d](#10-PlaneSourceDemo3d)
 - 11, [Planes3d](#11-Planes3d)
+- 12, [ShrinkCube3d](#12-ShrinkCube3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -107,3 +108,9 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 [回到顶部](#tip)
 
 ![image-20250620170517918](README.assets/image-20250620170517918.png)
+
+# 12, ShrinkCube3d
+
+[回到顶部](#tip)
+
+![image-20250627090213754](README.assets/image-20250627090213754.png)

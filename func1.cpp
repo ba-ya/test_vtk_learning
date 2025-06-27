@@ -134,7 +134,9 @@ void Func1::do_something(QString name_class)
     } else if (name_class == "Planes3d") {
         resize_render(2);
         Planes3d::Draw(renders);
-    }else {
+    } else if (name_class == "ShrinkCube3d") {
+        ShrinkCube3d::Draw(m_render);
+    } else {
         qDebug() << name_class << "not achive";
         return;
     }

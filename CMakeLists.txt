@@ -49,6 +49,7 @@ set(EXAMPLE
   examples/09GeometricObjectsDemo.cpp
   examples/10PlaneSourceDemo.cpp
   examples/11Planes.cpp
+  examples/12ShrinkCube.cpp
 )
 
 set(PROJECT_SOURCES

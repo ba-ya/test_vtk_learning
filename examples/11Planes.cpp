@@ -46,10 +46,10 @@ void Planes3d::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders)
     std::vector<vtkSmartPointer<vtkActor>> actors;
     std::vector<vtkSmartPointer<vtkActor2D>> text_actors;
     for (int i = 0; i < titles.size(); ++i) {
+        //  从一组平面，生成几何体（convex hull）
         auto hull = vtkSmartPointer<vtkHull>::New();
         hull->SetPlanes(planes[i]);
         auto polydata =vtkSmartPointer<vtkPolyData>::New();
-        // 包装盒hull?
         hull->GenerateHull(polydata, -200, 200, -200, 200, -200, 200);
 
         auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
