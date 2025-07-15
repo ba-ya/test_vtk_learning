@@ -2,6 +2,19 @@
 
 # [例子](./examples/readme_list.md)
 
+# 常用
+
+## `QString`设置为text_mapper的输入
+
+```c++
+  QStringList titles;
+  text_mapper->SetInput(titles.at(i).toUtf8().constData());
+```
+
+
+
+
+
 # 如何学习
 
 ------

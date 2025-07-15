@@ -56,6 +56,9 @@ namespace SourceObjectsDemo3d {
 void Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders);
 }
 
+namespace Cell3DDemonstration3d {
+void Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders);
+}
 
 
 #endif // _1_2D_CELLS_H

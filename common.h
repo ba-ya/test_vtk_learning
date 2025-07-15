@@ -43,15 +43,17 @@ static void layout_renders_in_grid(std::vector<vtkSmartPointer<vtkRenderer>> ren
         for (int col = 0; col < grid_cols; ++col) {
             auto index = row * grid_cols + col;
             auto viewport = get_viewport(row, col, grid_rows, grid_cols);
-            if (index < renders.size()) {
-                renders[index]->SetViewport(viewport.data());
-                if (index < actors.size()) {
-                    renders[index]->AddActor(actors[index]);
-                }
-                if (index < text_actors.size()) {
-                    renders[index]->AddActor2D(text_actors[index]);
-                }
+            if (index >= renders.size()) {
+                break;
             }
+            renders[index]->SetViewport(viewport.data());
+            if (index < actors.size()) {
+                renders[index]->AddActor(actors[index]);
+            }
+            if (index < text_actors.size()) {
+                renders[index]->AddActor2D(text_actors[index]);
+            }
+
         }
     }
 }

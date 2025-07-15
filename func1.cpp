@@ -60,7 +60,9 @@ void Func1::init_examples()
 {
     auto &&get_class_name = [this]() {
         QStringList names;
-        QString base = QDir(QDir::currentPath().remove("_build_release")).absoluteFilePath("examples");
+        auto dir = QDir(QDir::currentPath());
+        dir.cdUp(); dir.cdUp();
+        QString base = dir.absoluteFilePath("examples");
         auto file_path = QDir(base).absoluteFilePath("00headers.h");
         QFile file(file_path);
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -139,6 +141,9 @@ void Func1::do_something(QString name_class)
     } else if (name_class == "SourceObjectsDemo3d") {
         resize_render(9);
         SourceObjectsDemo3d::Draw(renders);
+    } else if (name_class == "Cell3DDemonstration3d") {
+        resize_render(8);
+        Cell3DDemonstration3d::Draw(renders);
     } else {
         qDebug() << name_class << "not achive";
         return;

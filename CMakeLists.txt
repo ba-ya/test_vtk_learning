@@ -51,6 +51,7 @@ set(EXAMPLE
   examples/11Planes.cpp
   examples/12ShrinkCube.cpp
   examples/13SourceObjectsDemo.cpp
+  examples/14Cell3DDemonstration.cpp
 )
 
 set(PROJECT_SOURCES
