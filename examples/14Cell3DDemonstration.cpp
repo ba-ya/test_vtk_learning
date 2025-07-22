@@ -209,7 +209,13 @@ vtkSmartPointer<vtkUnstructuredGrid> MakePolyhedron() {
         }
     }
     auto ug = vtkSmartPointer<vtkUnstructuredGrid>::New();
-    ug->InsertNextCell(VTK_POLYHEDRON, cnt_vertices, dodechedronPointsIds, cnt_faces, dodechedron_faces->GetPointer(0));
+    ug->InsertNextCell(
+        VTK_POLYHEDRON,         // 类型：表示这是一个多面体
+        cnt_vertices,           // 一共多少个点
+        dodechedronPointsIds,   // 所有点的 ID（顺序无所谓，但要包含所有）
+        cnt_faces,              // 面的数量
+        dodechedron_faces->GetPointer(0) // 所有面的数据
+        );
     ug->SetPoints(points);
     return ug;
 }

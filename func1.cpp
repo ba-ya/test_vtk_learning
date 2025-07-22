@@ -144,6 +144,8 @@ void Func1::do_something(QString name_class)
     } else if (name_class == "Cell3DDemonstration3d") {
         resize_render(8);
         Cell3DDemonstration3d::Draw(renders);
+    } else if (name_class == "CellTypeSource3d") {
+        CellTypeSource3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;
