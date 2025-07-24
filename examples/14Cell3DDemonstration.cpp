@@ -73,6 +73,9 @@ void Cell3DDemonstration3d::Draw(std::vector<vtkSmartPointer<vtkRenderer>> rende
         actors.push_back(vtkSmartPointer<vtkActor>::New());
         actors[i]->SetMapper(mapper);
         actors[i]->GetProperty()->SetColor(colors->GetColor3d("Peachpuff").GetData());
+        // 显示edge
+        actors[i]->GetProperty()->SetLineWidth(3);
+        actors[i]->GetProperty()->EdgeVisibilityOn();
     }
     Helper::layout_renders_in_grid(renders, actors, text_actors, 3, 3);
 }

@@ -146,6 +146,8 @@ void Func1::do_something(QString name_class)
         Cell3DDemonstration3d::Draw(renders);
     } else if (name_class == "CellTypeSource3d") {
         CellTypeSource3d::Draw(m_render);
+    } else if (name_class == "ConvexPointSet3d") {
+        ConvexPointSet3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;
@@ -156,14 +158,14 @@ void Func1::do_something(QString name_class)
 
 void Func1::clear()
 {
-    for (auto render : renders) {
+    for (auto &render : renders) {
         render->RemoveAllViewProps();
     }
 }
 
 void Func1::reset_camera()
 {
-    for (auto render : renders) {
+    for (auto &render : renders) {
         auto camera = render->GetActiveCamera();
         camera->SetPosition(0, 0, 600);
         camera->SetViewUp(0, 1, 0);

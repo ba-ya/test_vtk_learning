@@ -49,7 +49,7 @@ void ExampleCells2d::Draw(vtkRenderer *renderer)
     auto poly_data = vtkSmartPointer<vtkPolyData>::New();
     poly_data->SetPoints(points);
     poly_data->SetPolys(cells);
-    poly_data->GetCellData()->SetScalars(scalars);
+    poly_data->GetCellData()->SetScalars(scalars);// 每个符号的颜色将根据其数据值
 
     auto lut = vtkSmartPointer<vtkLookupTable>::New();
     lut->SetNumberOfTableValues(max);
