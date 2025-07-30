@@ -67,4 +67,10 @@ void Draw(vtkRenderer* renderer);
 namespace ConvexPointSet3d {
 void Draw(vtkRenderer* renderer);
 }
+
+namespace Assembly3d {
+void Draw(vtkRenderer* renderer);
+}
+
+
 #endif // _1_2D_CELLS_H

@@ -16,6 +16,7 @@
 - 14, [Cell3DDemonstration3d](#14-Cell3DDemonstration3d)
 - 15, [CellTypeSource3d](#15-CellTypeSource3d)
 - 16, [ConvexPointSet3d](#16-ConvexPointSet3d)
+- 17, [Assembly3d](#17-Assembly3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -146,3 +147,9 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 [learn](./examples/readme_16.md)
 
 ![image-20250724110056715](README.assets/image-20250724110056715.png)
+
+## 17, Assembly3d
+
+[回到顶部](#tip)
+
+![image-20250730094053910](README.assets/image-20250730094053910.png)

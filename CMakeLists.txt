@@ -54,6 +54,7 @@ set(EXAMPLE
   examples/14Cell3DDemonstration.cpp
   examples/15CellTypeSource.cpp
   examples/16ConvexPointSet.cpp
+  examples/17Assembly.cpp
 )
 
 set(PROJECT_SOURCES

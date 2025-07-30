@@ -148,6 +148,8 @@ void Func1::do_something(QString name_class)
         CellTypeSource3d::Draw(m_render);
     } else if (name_class == "ConvexPointSet3d") {
         ConvexPointSet3d::Draw(m_render);
+    } else if (name_class == "Assembly3d") {
+        Assembly3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;
