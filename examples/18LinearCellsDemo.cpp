@@ -164,24 +164,30 @@ vtkSmartPointer<vtkUnstructuredGrid> MakePolyVertex() {
     return ug;
 }
 
+// line只有0,1两个id
 vtkSmartPointer<vtkUnstructuredGrid> MakeLine() {
-    auto cnt_vertices = 2;
+    auto cnt_vertices = 6;
     auto points = vtkSmartPointer<vtkPoints>::New();
-    points->InsertNextPoint(0,0,0);
-    points->InsertNextPoint(0.5,0.5,0);
-
-    auto line = vtkSmartPointer<vtkLine>::New();
-    line->GetPointIds()->SetNumberOfIds(cnt_vertices);
-    for (int i = 0; i < cnt_vertices; ++i) {
-        line->GetPointIds()->SetId(i, i);
-    }
+    points->InsertNextPoint(0, 0, 0);
+    points->InsertNextPoint(1, -0.1, 0);
+    points->InsertNextPoint(0.8, 0.5, 0);
+    points->InsertNextPoint(1, 1, 0);
+    points->InsertNextPoint(0.6, 1.2, 0);
+    points->InsertNextPoint(0, 0.8, 0);
 
     auto ug = vtkSmartPointer<vtkUnstructuredGrid>::New();
     ug->SetPoints(points);
-    ug->InsertNextCell(line->GetCellType(), line->GetPointIds());
+    for (int i = 0; i < cnt_vertices - 1; ++i) {
+        auto line = vtkSmartPointer<vtkLine>::New();
+        line->GetPointIds()->SetId(0, i);
+        line->GetPointIds()->SetId(1, i + 1);
+        ug->InsertNextCell(line->GetCellType(), line->GetPointIds());
+    }
+
     return ug;
 }
 
+// polyline按照id顺序连接所有点
 vtkSmartPointer<vtkUnstructuredGrid> MakePolyLine() {
     auto cnt_vertices = 5;
     auto points = vtkSmartPointer<vtkPoints>::New();
