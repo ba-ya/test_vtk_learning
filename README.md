@@ -43,6 +43,12 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 
 [回到顶部](#tip)
 
+// new version
+
+![image-20250731114750575](README.assets/image-20250731114750575.png)
+
+// old version
+
 一些计算,没有图像,在输出查看,具体看代码
 
 ![image-20250616090333140](README.assets/image-20250616090333140.png)
