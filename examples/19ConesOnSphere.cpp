@@ -26,17 +26,19 @@ void ConesOnSphere3d::Draw(vtkRenderer *renderer)
     cone_source->SetResolution(30);
 
     auto normals = vtkSmartPointer<vtkPolyDataNormals>::New();
-    normals->ComputeCellNormalsOn();
+    normals->ComputeCellNormalsOn();// 启用计算每个单元(面)的法向量
     normals->SetInputConnection(sphere_source->GetOutputPort());
 
+    // 计算几何体中每个 Cell(面)中心的位置点。
     auto cell_centers = vtkSmartPointer<vtkCellCenters>::New();
     cell_centers->SetInputConnection(normals->GetOutputPort());
 
+    // 在每个输入点位置放置一个"符号几何体"(glyph)，并可根据方向向量旋转它。
     auto glyph_filter = vtkSmartPointer<vtkGlyph3D>::New();
-    glyph_filter->OrientOn();
-    glyph_filter->SetVectorModeToUseNormal();
-    glyph_filter->SetSourceConnection(cone_source->GetOutputPort());
-    glyph_filter->SetInputConnection(cell_centers->GetOutputPort());
+    glyph_filter->SetVectorModeToUseNormal(); // 使用法向量作为方向
+    glyph_filter->OrientOn();                 // 开启方向调整
+    glyph_filter->SetSourceConnection(cone_source->GetOutputPort()); // 设置要放置的符号形状(小 cone)
+    glyph_filter->SetInputConnection(cell_centers->GetOutputPort()); // 设置 glyph 放置的位置(面中心点)。
 
     auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
     mapper->SetInputConnection(glyph_filter->GetOutputPort());
