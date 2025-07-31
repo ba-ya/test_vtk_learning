@@ -72,5 +72,9 @@ namespace Assembly3d {
 void Draw(vtkRenderer* renderer);
 }
 
+namespace LinearCellsDemo3d {
+void Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders);
+}
+
 
 #endif // _1_2D_CELLS_H

@@ -34,10 +34,7 @@ static std::array<double, 4> get_viewport(int row, int col, int rows, int cols) 
     viewport[3] = static_cast<double>(rows - row) / rows;
     return viewport;
 }
-
 static void layout_renders_in_grid(std::vector<vtkSmartPointer<vtkRenderer>> renders,
-                                   std::vector<vtkSmartPointer<vtkActor>> actors,
-                                   std::vector<vtkSmartPointer<vtkActor2D>> text_actors,
                                    int grid_rows, int grid_cols) {
     for (int row = 0; row < grid_rows; ++row) {
         for (int col = 0; col < grid_cols; ++col) {
@@ -47,17 +44,9 @@ static void layout_renders_in_grid(std::vector<vtkSmartPointer<vtkRenderer>> ren
                 break;
             }
             renders[index]->SetViewport(viewport.data());
-            if (index < actors.size()) {
-                renders[index]->AddActor(actors[index]);
-            }
-            if (index < text_actors.size()) {
-                renders[index]->AddActor2D(text_actors[index]);
-            }
-
         }
     }
 }
-
 }
 
 #endif // COMMON_H

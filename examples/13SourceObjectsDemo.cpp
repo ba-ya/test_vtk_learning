@@ -82,7 +82,8 @@ void SourceObjectsDemo3d::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders
         text_actors.push_back(vtkSmartPointer<vtkActor2D>::New());
         text_actors[i]->SetMapper(text_mapper);
         text_actors[i]->SetPosition(120, 16);
-    }
 
-    Helper::layout_renders_in_grid(renders, actors, text_actors, 3, 3);
+        renders[i]->AddActor(actors[i]);
+        renders[i]->AddActor2D(text_actors[i]);
+    }
 }

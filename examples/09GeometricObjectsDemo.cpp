@@ -66,20 +66,8 @@ void GeometricObjectsDemo3d::Draw(std::vector<vtkSmartPointer<vtkRenderer> > ren
         text_actors.push_back(vtkSmartPointer<vtkActor2D>::New());
         text_actors[i]->SetMapper(text_mappers[i]);
         text_actors[i]->SetPosition(120, 16);
+
+        renders[i]->AddActor(actors[i]);
+        renders[i]->AddActor2D(text_actors[i]);
     }
-    Helper::layout_renders_in_grid(renders, actors, text_actors, 3, 3);
-#if 0
-    int grid_cols = 3, grid_rows = 3;
-    for (int row = 0; row < grid_rows; ++row) {
-        for (int col = 0; col < grid_cols; ++col) {
-            auto index = row * grid_cols + col;
-            auto viewport = Helper::get_viewport(row, col, grid_rows, grid_cols);
-            if (index < geometric_object_sources.size()) {
-                renders[index]->SetViewport(viewport.data() );
-                renders[index]->AddActor(actors[index]);
-                renders[index]->AddActor2D(text_actors[index]);
-            }
-        }
-    }
-#endif
 }

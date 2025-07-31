@@ -28,7 +28,7 @@ private slots:
 
 private:
     void init();
-    void resize_render(int count);
+    void resize_render(int count, int grid_rows, int grid_cols);
     void init_examples();
     void do_something(QString name_class);
 

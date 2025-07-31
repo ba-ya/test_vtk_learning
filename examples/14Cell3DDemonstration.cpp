@@ -76,8 +76,10 @@ void Cell3DDemonstration3d::Draw(std::vector<vtkSmartPointer<vtkRenderer>> rende
         // 显示edge
         actors[i]->GetProperty()->SetLineWidth(3);
         actors[i]->GetProperty()->EdgeVisibilityOn();
+
+        renders[i]->AddActor(actors[i]);
+        renders[i]->AddActor2D(text_actors[i]);
     }
-    Helper::layout_renders_in_grid(renders, actors, text_actors, 3, 3);
 }
 
 namespace {

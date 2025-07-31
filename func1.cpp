@@ -36,7 +36,7 @@ void Func1::init()
     init_examples();
 }
 
-void Func1::resize_render(int count)
+void Func1::resize_render(int count, int grid_rows, int grid_cols)
 {
     for (auto &render : renders) {
         vtk_widget->renderWindow()->RemoveRenderer(render);
@@ -54,6 +54,7 @@ void Func1::resize_render(int count)
         vtk_widget->renderWindow()->AddRenderer(render);
         renders.push_back(render);
     }
+    Helper::layout_renders_in_grid(renders, grid_rows, grid_cols);
 }
 
 void Func1::init_examples()
@@ -109,7 +110,7 @@ void Func1::do_something(QString name_class)
     }
     int size = 1;
     if (renders.size() != size) {
-        resize_render(size);
+        resize_render(size, 1 , 1);
     }
     auto m_render = renders[0];
     if (name_class == "ExampleCells2d") {
@@ -129,20 +130,20 @@ void Func1::do_something(QString name_class)
     } else if (name_class == "EllipticalCylinder3d") {
         EllipticalCylinder3d::Draw(m_render);
     } else if (name_class == "GeometricObjectsDemo3d") {
-        resize_render(8);
+        resize_render(8, 3, 3);
         GeometricObjectsDemo3d::Draw(renders);
     } else if (name_class == "PlaneSourceDemo3d") {
         PlaneSourceDemo3d::Draw(m_render);
     } else if (name_class == "Planes3d") {
-        resize_render(2);
+        resize_render(2, 1, 2);
         Planes3d::Draw(renders);
     } else if (name_class == "ShrinkCube3d") {
         ShrinkCube3d::Draw(m_render);
     } else if (name_class == "SourceObjectsDemo3d") {
-        resize_render(9);
+        resize_render(9, 3, 3);
         SourceObjectsDemo3d::Draw(renders);
     } else if (name_class == "Cell3DDemonstration3d") {
-        resize_render(8);
+        resize_render(8, 3, 3);
         Cell3DDemonstration3d::Draw(renders);
     } else if (name_class == "CellTypeSource3d") {
         CellTypeSource3d::Draw(m_render);
@@ -150,6 +151,9 @@ void Func1::do_something(QString name_class)
         ConvexPointSet3d::Draw(m_render);
     } else if (name_class == "Assembly3d") {
         Assembly3d::Draw(m_render);
+    } else if (name_class == "LinearCellsDemo3d") {
+        resize_render(16, 4, 4);
+        LinearCellsDemo3d::Draw(renders);
     } else {
         qDebug() << name_class << "not achive";
         return;

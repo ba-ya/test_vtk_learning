@@ -43,8 +43,6 @@ void Planes3d::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders)
     text_property->SetFontSize(16);
     text_property->SetJustificationToLeft();
 
-    std::vector<vtkSmartPointer<vtkActor>> actors;
-    std::vector<vtkSmartPointer<vtkActor2D>> text_actors;
     for (int i = 0; i < titles.size(); ++i) {
         //  从一组平面，生成几何体（convex hull）
         auto hull = vtkSmartPointer<vtkHull>::New();
@@ -58,7 +56,6 @@ void Planes3d::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders)
         auto actor = vtkSmartPointer<vtkActor>::New();
         actor->SetMapper(mapper);
         actor->GetProperty()->SetColor(colors->GetColor3d("moccasin").GetData());
-        actors.push_back(actor);
 
         auto text_mapper = vtkSmartPointer<vtkTextMapper>::New();
         text_mapper->SetInput(titles.at(i).toUtf8().constData());
@@ -68,8 +65,8 @@ void Planes3d::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders)
         text_actor->SetMapper(text_mapper);
         // 像素点位置,距离左边120px, 距离底部16px
         text_actor->SetPosition(120, 16);
-        text_actors.push_back(text_actor);
 
+        renders[i]->AddActor(actor);
+        renders[i]->AddActor2D(text_actor);
     }
-    Helper::layout_renders_in_grid(renders, actors, text_actors, 2, 1);
 }
