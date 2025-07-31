@@ -10,6 +10,7 @@
 #include <vtkRenderWindowInteractor.h>
 #include <QDir>
 #include <vtkNamedColors.h>
+#include <vtkCameraOrientationWidget.h>
 
 Func1::Func1(QWidget *parent)
     : QWidget(parent)
@@ -154,9 +155,17 @@ void Func1::do_something(QString name_class)
     } else if (name_class == "LinearCellsDemo3d") {
         resize_render(16, 4, 4);
         LinearCellsDemo3d::Draw(renders);
+    } else if (name_class == "ConesOnSphere3d") {
+        ConesOnSphere3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;
+    }
+    if (renders.size() == 1) {
+        cow->SetParentRenderer(m_render);
+        cow->On();
+    } else {
+        cow->Off();
     }
     reset_camera();
     do_render();

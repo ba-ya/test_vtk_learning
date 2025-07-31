@@ -9,7 +9,7 @@ namespace Ui {
 class Func1;
 }
 QT_END_NAMESPACE
-
+class vtkCameraOrientationWidget;
 class vtkRenderer;
 class QVTKOpenGLNativeWidget;
 class vtkRenderWindowInteractor;
@@ -41,5 +41,6 @@ private:
 
     QVTKOpenGLNativeWidget *vtk_widget;
     std::vector<vtkSmartPointer<vtkRenderer>> renders;
+    vtkNew<vtkCameraOrientationWidget> cow;
 };
 #endif // FUNC1_H

@@ -18,6 +18,7 @@
 - 16, [ConvexPointSet3d](#16-ConvexPointSet3d)
 - 17, [Assembly3d](#17-Assembly3d)
 - 18, [LinearCellsDemo3d](#18-LinearCellsDemo3d)
+- 19, [ConesOnSphere3d](#19-ConesOnSphere3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -166,3 +167,9 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 [回到顶部](#tip)
 
 ![image-20250731102925814](README.assets/image-20250731102925814.png)
+
+## 19, ConesOnSphere3d
+
+[回到顶部](#tip)
+
+![image-20250731135700723](README.assets/image-20250731135700723.png)

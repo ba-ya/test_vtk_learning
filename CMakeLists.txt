@@ -56,6 +56,7 @@ set(EXAMPLE
   examples/16ConvexPointSet.cpp
   examples/17Assembly.cpp
   examples/18LinearCellsDemo.cpp
+  examples/19ConesOnSphere.cpp
 )
 
 set(PROJECT_SOURCES
