@@ -20,6 +20,7 @@
 - 18, [LinearCellsDemo3d](#18-LinearCellsDemo3d)
 - 19, [ConesOnSphere3d](#19-ConesOnSphere3d)
 - 20, [EarthSource3d](#20-EarthSource3d)
+- 21, [Frustum3d](#21-Frustum3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -180,3 +181,9 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 [回到顶部](#tip)
 
 ![image-20250808150834903](README.assets/image-20250808150834903.png)
+
+## 21, Frustum3d
+
+[回到顶部](#tip)
+
+![image-20250808161844268](README.assets/image-20250808161844268.png)

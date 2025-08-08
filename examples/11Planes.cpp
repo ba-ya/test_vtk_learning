@@ -29,6 +29,8 @@ void Planes3d::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders)
     // 获取相机的六个裁剪面
     // 每个面由 4 个 double 表示一个平面方程(Ax + By + Cz + D = 0)，共 6 面 × 4 = 24 个值。
     double plane_array[24];
+    // aspect：纵横比(宽 / 高)，告诉相机你当前渲染窗口的比例。
+    // 1 表示视口宽高比 = 1
     camera->GetFrustumPlanes(1, plane_array);
     planes[0]->SetFrustumPlanes(plane_array);
 

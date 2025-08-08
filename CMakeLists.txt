@@ -58,6 +58,7 @@ set(EXAMPLE
   examples/18LinearCellsDemo.cpp
   examples/19ConesOnSphere.cpp
   examples/20EarthSource.cpp
+  examples/21Frustum.cpp
 )
 
 set(PROJECT_SOURCES
