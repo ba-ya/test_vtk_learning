@@ -57,6 +57,7 @@ set(EXAMPLE
   examples/17Assembly.cpp
   examples/18LinearCellsDemo.cpp
   examples/19ConesOnSphere.cpp
+  examples/20EarthSource.cpp
 )
 
 set(PROJECT_SOURCES

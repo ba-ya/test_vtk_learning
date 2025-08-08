@@ -157,6 +157,8 @@ void Func1::do_something(QString name_class)
         LinearCellsDemo3d::Draw(renders);
     } else if (name_class == "ConesOnSphere3d") {
         ConesOnSphere3d::Draw(m_render);
+    }  else if (name_class == "EarthSource3d") {
+        EarthSource3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

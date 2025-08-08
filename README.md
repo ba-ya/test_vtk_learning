@@ -19,6 +19,7 @@
 - 17, [Assembly3d](#17-Assembly3d)
 - 18, [LinearCellsDemo3d](#18-LinearCellsDemo3d)
 - 19, [ConesOnSphere3d](#19-ConesOnSphere3d)
+- 20, [EarthSource3d](#20-EarthSource3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -173,3 +174,9 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 [回到顶部](#tip)
 
 ![image-20250731135700723](README.assets/image-20250731135700723.png)
+
+## 20, EarthSource3d
+
+[回到顶部](#tip)
+
+![image-20250808150834903](README.assets/image-20250808150834903.png)
