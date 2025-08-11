@@ -59,6 +59,7 @@ set(EXAMPLE
   examples/19ConesOnSphere.cpp
   examples/20EarthSource.cpp
   examples/21Frustum.cpp
+  examples/22OrientedArrow.cpp
 )
 
 set(PROJECT_SOURCES

@@ -21,6 +21,7 @@
 - 19, [ConesOnSphere3d](#19-ConesOnSphere3d)
 - 20, [EarthSource3d](#20-EarthSource3d)
 - 21, [Frustum3d](#21-Frustum3d)
+- 22, [OrientedArrow3d](#22-OrientedArrow3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -187,3 +188,23 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 [回到顶部](#tip)
 
 ![image-20250808161844268](README.assets/image-20250808161844268.png)
+
+## 22, OrientedArrow3d
+
+[回到顶部](#tip)
+
+```c++
+#if 0
+    // no new data created
+    mapper->SetInputConnection(arrow_source->GetOutputPort());
+    actor->SetUserTransform(transfrom);
+#else
+    // create new polydata
+    auto transform_pd = vtkSmartPointer<vtkTransformPolyDataFilter>::New();
+    transform_pd->SetTransform(transfrom);
+    transform_pd->SetInputConnection(arrow_source->GetOutputPort());
+    mapper->SetInputConnection(transform_pd->GetOutputPort());
+#endif
+```
+
+![image-20250811085628878](README.assets/image-20250811085628878.png)
