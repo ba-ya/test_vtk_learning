@@ -92,4 +92,8 @@ namespace OrientedArrow3d {
 void Draw(vtkRenderer* renderer);
 }
 
+namespace OrientedCylinder3d {
+void Draw(vtkRenderer* renderer);
+}
+
 #endif // _1_2D_CELLS_H

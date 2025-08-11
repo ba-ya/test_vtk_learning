@@ -60,6 +60,7 @@ set(EXAMPLE
   examples/20EarthSource.cpp
   examples/21Frustum.cpp
   examples/22OrientedArrow.cpp
+  examples/23OrientedCylinder.cpp
 )
 
 set(PROJECT_SOURCES

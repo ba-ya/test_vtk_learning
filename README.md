@@ -22,6 +22,7 @@
 - 20, [EarthSource3d](#20-EarthSource3d)
 - 21, [Frustum3d](#21-Frustum3d)
 - 22, [OrientedArrow3d](#22-OrientedArrow3d)
+- 23, [OrientedCylinder3d](#23-OrientedCylinder3d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -208,3 +209,16 @@ Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取�
 ```
 
 ![image-20250811085628878](README.assets/image-20250811085628878.png)
+
+## 23, OrientedCylinder3d
+
+[回到顶部](#tip)
+
+```c++
+// 只有heigth方向(自身坐标系y方向)scale 长度到length 
+vtkMath::Subtract(end_p, start_p, normal_y);
+// 平移到中点
+matrix->SetElement(0, 3, (start_p[0] + end_p[0]) / 2);
+```
+
+![image-20250811110243955](README.assets/image-20250811110243955.png)
