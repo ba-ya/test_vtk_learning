@@ -96,4 +96,8 @@ namespace OrientedCylinder3d {
 void Draw(vtkRenderer* renderer);
 }
 
+namespace Plane2d {
+void Draw(vtkRenderer* renderer);
+}
+
 #endif // _1_2D_CELLS_H

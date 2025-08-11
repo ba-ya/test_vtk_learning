@@ -165,8 +165,10 @@ void Func1::do_something(QString name_class)
         Frustum3d::Draw(m_render);
     } else if (name_class == "OrientedArrow3d") {
         OrientedArrow3d::Draw(m_render);
-    }  else if (name_class == "OrientedCylinder3d") {
+    } else if (name_class == "OrientedCylinder3d") {
         OrientedCylinder3d::Draw(m_render);
+    } else if (name_class == "Plane2d") {
+        Plane2d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

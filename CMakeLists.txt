@@ -61,6 +61,7 @@ set(EXAMPLE
   examples/21Frustum.cpp
   examples/22OrientedArrow.cpp
   examples/23OrientedCylinder.cpp
+  examples/24Plane.cpp
 )
 
 set(PROJECT_SOURCES

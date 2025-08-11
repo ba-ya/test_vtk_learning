@@ -23,6 +23,7 @@
 - 21, [Frustum3d](#21-Frustum3d)
 - 22, [OrientedArrow3d](#22-OrientedArrow3d)
 - 23, [OrientedCylinder3d](#23-OrientedCylinder3d)
+- 24, [Plane2d](#24-Plane2d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -222,3 +223,9 @@ matrix->SetElement(0, 3, (start_p[0] + end_p[0]) / 2);
 ```
 
 ![image-20250811110243955](README.assets/image-20250811110243955.png)
+
+## 24, Plane2d
+
+[回到顶部](#tip)
+
+![image-20250811142400559](README.assets/image-20250811142400559.png)

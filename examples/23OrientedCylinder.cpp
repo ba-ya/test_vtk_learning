@@ -70,12 +70,14 @@ void OrientedCylinder3d::Draw(vtkRenderer *renderer)
 
     auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
     auto actor = vtkSmartPointer<vtkActor>::New();
-#if 1
+#if 0
     mapper->SetInputConnection(cylinder_source->GetOutputPort());
     actor->SetUserTransform(transform);
 #else
     auto transform_pd = vtkSmartPointer<vtkTransformPolyDataFilter>::New();
-    transform_pd->SetInputConnection(cylinder_source->GetOutputPort());
+    cylinder_source->Update();
+    transform_pd->SetInputData(cylinder_source->GetOutput());
+    // transform_pd->SetInputConnection(cylinder_source->GetOutputPort());
     transform_pd->SetTransform(transform);
     mapper->SetInputConnection(transform_pd->GetOutputPort());
 #endif
