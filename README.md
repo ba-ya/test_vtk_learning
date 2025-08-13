@@ -25,6 +25,7 @@
 - 23, [OrientedCylinder3d](#23-OrientedCylinder3d)
 - 24, [Plane2d](#24-Plane2d)
 - 25, [PlatonicSolids3d](#25-PlatonicSolids3d)
+- 26, [RegularPolygonSource2d](#26-RegularPolygonSource2d)
 
 Markdown All in One: Create Table of Contents, `vscode`生成`github`可读取的目录
 
@@ -236,3 +237,9 @@ matrix->SetElement(0, 3, (start_p[0] + end_p[0]) / 2);
 [回到顶部](#tip)
 
 ![image-20250813153308373](README.assets/image-20250813153308373.png)
+
+## 26, RegularPolygonSource2d
+
+[回到顶部](#tip)
+
+![image-20250813165153337](README.assets/image-20250813165153337.png)

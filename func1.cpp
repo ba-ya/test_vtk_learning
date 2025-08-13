@@ -172,6 +172,8 @@ void Func1::do_something(QString name_class)
     } else if (name_class == "PlatonicSolids3d") {
         resize_render(5, 2, 3);
         PlatonicSolids3d::Draw(renders);
+    } else if (name_class == "RegularPolygonSource2d") {
+        RegularPolygonSource2d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

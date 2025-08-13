@@ -63,6 +63,7 @@ set(EXAMPLE
   examples/23OrientedCylinder.cpp
   examples/24Plane.cpp
   examples/25PlatonicSolids.cpp
+  examples/26RegularPolygonSource.cpp
 )
 
 set(PROJECT_SOURCES
