@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-set(VTK_path "D:/proj/framework/foundation/vtk/windows/lib/cmake/vtk-9.4")
+set(VTK_path "D:/proj/framework/3rdparty/vtk/windows/lib/cmake/vtk-9.4")
 list(APPEND CMAKE_PREFIX_PATH "${VTK_path}")
 find_package(VTK REQUIRED)
 # target_link_libraries(${PROJECT_NAME} PRIVATE
@@ -62,6 +62,7 @@ set(EXAMPLE
   examples/22OrientedArrow.cpp
   examples/23OrientedCylinder.cpp
   examples/24Plane.cpp
+  examples/25PlatonicSolids.cpp
 )
 
 set(PROJECT_SOURCES
