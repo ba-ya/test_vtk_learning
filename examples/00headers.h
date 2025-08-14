@@ -108,5 +108,8 @@ namespace RegularPolygonSource2d {
 void Draw(vtkRenderer* renderer);
 }
 
+namespace TessellatedBoxSource3d {
+void Draw(vtkRenderer* renderer);
+}
 
 #endif // _1_2D_CELLS_H

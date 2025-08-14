@@ -64,6 +64,7 @@ set(EXAMPLE
   examples/24Plane.cpp
   examples/25PlatonicSolids.cpp
   examples/26RegularPolygonSource.cpp
+  examples/27TessellatedBoxSource.cpp
 )
 
 set(PROJECT_SOURCES

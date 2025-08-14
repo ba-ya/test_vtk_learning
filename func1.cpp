@@ -174,6 +174,8 @@ void Func1::do_something(QString name_class)
         PlatonicSolids3d::Draw(renders);
     } else if (name_class == "RegularPolygonSource2d") {
         RegularPolygonSource2d::Draw(m_render);
+    } else if (name_class == "TessellatedBoxSource3d") {
+        TessellatedBoxSource3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;
