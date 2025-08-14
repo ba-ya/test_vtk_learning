@@ -37,34 +37,34 @@ set(MAINWIDGET
 )
 
 set(EXAMPLE
-  examples/00headers.h
-  examples/01cells.cpp
-  examples/02helloworld.cpp
-  examples/03simple_operations.cpp
-  examples/04axes.cpp
-  examples/05color_lines.cpp
-  examples/06cube.cpp
-  examples/07dodecahedron.cpp
-  examples/08EllipticalCylinder.cpp
-  examples/09GeometricObjectsDemo.cpp
-  examples/10PlaneSourceDemo.cpp
-  examples/11Planes.cpp
-  examples/12ShrinkCube.cpp
-  examples/13SourceObjectsDemo.cpp
-  examples/14Cell3DDemonstration.cpp
-  examples/15CellTypeSource.cpp
-  examples/16ConvexPointSet.cpp
-  examples/17Assembly.cpp
-  examples/18LinearCellsDemo.cpp
-  examples/19ConesOnSphere.cpp
-  examples/20EarthSource.cpp
-  examples/21Frustum.cpp
-  examples/22OrientedArrow.cpp
-  examples/23OrientedCylinder.cpp
-  examples/24Plane.cpp
-  examples/25PlatonicSolids.cpp
-  examples/26RegularPolygonSource.cpp
-  examples/27TessellatedBoxSource.cpp
+  00headers.h
+  examples/01-25/01cells.cpp
+  examples/01-25/02helloworld.cpp
+  examples/01-25/03simple_operations.cpp
+  examples/01-25/04axes.cpp
+  examples/01-25/05color_lines.cpp
+  examples/01-25/06cube.cpp
+  examples/01-25/07dodecahedron.cpp
+  examples/01-25/08EllipticalCylinder.cpp
+  examples/01-25/09GeometricObjectsDemo.cpp
+  examples/01-25/10PlaneSourceDemo.cpp
+  examples/01-25/11Planes.cpp
+  examples/01-25/12ShrinkCube.cpp
+  examples/01-25/13SourceObjectsDemo.cpp
+  examples/01-25/14Cell3DDemonstration.cpp
+  examples/01-25/15CellTypeSource.cpp
+  examples/01-25/16ConvexPointSet.cpp
+  examples/01-25/17Assembly.cpp
+  examples/01-25/18LinearCellsDemo.cpp
+  examples/01-25/19ConesOnSphere.cpp
+  examples/01-25/20EarthSource.cpp
+  examples/01-25/21Frustum.cpp
+  examples/01-25/22OrientedArrow.cpp
+  examples/01-25/23OrientedCylinder.cpp
+  examples/01-25/24Plane.cpp
+  examples/01-25/25PlatonicSolids.cpp
+  examples/26-50/26RegularPolygonSource.cpp
+  examples/26-50/27TessellatedBoxSource.cpp
 )
 
 set(PROJECT_SOURCES

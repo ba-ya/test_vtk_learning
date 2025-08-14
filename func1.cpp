@@ -66,8 +66,7 @@ void Func1::init_examples()
         QStringList names;
         auto dir = QDir(QDir::currentPath());
         dir.cdUp(); dir.cdUp();
-        QString base = dir.absoluteFilePath("examples");
-        auto file_path = QDir(base).absoluteFilePath("00headers.h");
+        auto file_path = QDir(dir).absoluteFilePath("00headers.h");
         QFile file(file_path);
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             qDebug() << file_path << "open fail";
