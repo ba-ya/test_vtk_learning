@@ -116,4 +116,8 @@ namespace IsoparametricCellsDemo3d {
 void Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders);
 }
 
+namespace LegendScaleActor2d {
+void Draw(vtkRenderer* renderer);
+}
+
 #endif // _1_2D_CELLS_H

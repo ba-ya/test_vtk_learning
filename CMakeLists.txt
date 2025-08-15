@@ -66,6 +66,7 @@ set(EXAMPLE
   examples/26-50/26RegularPolygonSource.cpp
   examples/26-50/27TessellatedBoxSource.cpp
   examples/26-50/28IsoparametricCellsDemo.cpp
+  examples/26-50/29LegendScaleActor.cpp
 )
 
 set(PROJECT_SOURCES
