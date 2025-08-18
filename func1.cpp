@@ -182,6 +182,8 @@ void Func1::do_something(QString name_class)
         LegendScaleActor2d::Draw(m_render);
     } else if (name_class == "PolarAxesActor2d") {
         PolarAxesActor2d::Draw(m_render);
+    } else if (name_class == "TextOrigin3d") {
+        TextOrigin3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;
