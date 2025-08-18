@@ -1,6 +1,7 @@
-[根据屏幕坐标得到射线](#根据屏幕坐标得到射线)
+- [根据屏幕坐标得到射线](#根据屏幕坐标得到射线)
+- [PositionCoordinate](#positioncoordinate)
 
-## 根据屏幕坐标得到射线
+# 根据屏幕坐标得到射线
 
 ```c++
 // 自定义一个结构体，表示 3D 射线：起点和方向
@@ -39,5 +40,18 @@ Ray3D screen_to_ray(double x, double y, vtkRenderer* renderer) {
     };
 }
 
+```
+
+# PositionCoordinate
+
+```c++
+         // PositionCoordinate → 定义 左下角（起点）。
+        // Position2Coordinate → 定义 尺寸/右上角（终点）。
+        // x = 1 → 宽度占据整个窗口宽度（从左到右）。
+        // y = 0.33 → 高度 = 窗口的 33%。
+        // z = 0 → 无关。
+        // 坐标是归一化的 [0,1]（相对窗口大小）。
+        xyplot->GetPositionCoordinate()->SetValue(0, y_pos[i], 0);// 位置坐标(归一化)
+        xyplot->GetPosition2Coordinate()->SetValue(1, .33, 0);// 宽度, 高度
 ```
 

@@ -69,6 +69,7 @@ set(EXAMPLE
   examples/26-50/29LegendScaleActor.cpp
   examples/26-50/30PolarAxesActor.cpp
   examples/26-50/31TextOrigin.cpp
+  examples/26-50/32XYPlot.cpp
 )
 
 set(PROJECT_SOURCES

@@ -184,6 +184,9 @@ void Func1::do_something(QString name_class)
         PolarAxesActor2d::Draw(m_render);
     } else if (name_class == "TextOrigin3d") {
         TextOrigin3d::Draw(m_render);
+    } else if (name_class == "XYPlot") {
+        resize_render(2, 1, 2);
+        XYPlot::Draw(renders);
     } else {
         qDebug() << name_class << "not achive";
         return;

@@ -6,6 +6,7 @@
 - [29, LegendScaleActor2d](#29-LegendScaleActor2d)
 - [30, PolarAxesActor2d](#30-PolarAxesActor2d)
 - [31, TextOrigin3d](#31-TextOrigin3d)
+- [32, XYPlot](#32-XYPlot)
 # 26, RegularPolygonSource2d
 
 [回到顶部](#tip)
@@ -55,3 +56,22 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 ```
 
 ![image-20250818093000430](readme26-50.assets/image-20250818093000430.png)
+
+# 32, XYPlot
+
+[回到顶部](#tip)
+
+[structuredGrid](./examples/readme_32structuredGrid.md)
+
+```c++
+        // PositionCoordinate → 定义 左下角（起点）。
+        // Position2Coordinate → 定义 尺寸/右上角（终点）。
+        // x = 1 → 宽度占据整个窗口宽度（从左到右）。
+        // y = 0.33 → 高度 = 窗口的 33%。
+        // z = 0 → 无关。
+        // 坐标是归一化的 [0,1]（相对窗口大小）。
+        xyplot->GetPositionCoordinate()->SetValue(0, y_pos[i], 0);// 位置坐标(归一化)
+        xyplot->GetPosition2Coordinate()->SetValue(1, .33, 0);// 宽度, 高度
+```
+
+![image-20250818171716487](readme26-50.assets/image-20250818171716487.png)
