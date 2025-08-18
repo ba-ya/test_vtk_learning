@@ -180,6 +180,8 @@ void Func1::do_something(QString name_class)
         IsoparametricCellsDemo3d::Draw(renders);
     } else if (name_class == "LegendScaleActor2d") {
         LegendScaleActor2d::Draw(m_render);
+    } else if (name_class == "PolarAxesActor2d") {
+        PolarAxesActor2d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;
