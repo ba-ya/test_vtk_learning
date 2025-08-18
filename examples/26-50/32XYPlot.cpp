@@ -23,6 +23,7 @@
 #include <vtkTransform.h>
 #include <vtkTransformPolyDataFilter.h>
 #include <vtkDataSetSurfaceFilter.h>
+#include <QTimer>
 
 void CreateFakeStructuredGrid(vtkSmartPointer<vtkStructuredGrid> sgrid, int dims[3])
 {
@@ -120,6 +121,7 @@ void XYPlot::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renderers)
     line->SetResolution(30);
 
     std::vector<vtkSmartPointer<vtkProbeFilter>> probes;
+    std::vector<vtkSmartPointer<vtkTransform>> transfroms;
     for (int i = 0; i < 3; ++i) {
         auto transfrom = vtkSmartPointer<vtkTransform>::New();
         transfrom->Identity();
@@ -137,6 +139,7 @@ void XYPlot::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renderers)
         probe->SetInputConnection(tf->GetOutputPort());
         probe->SetSourceData(sgrid);
 
+        transfroms.push_back(transfrom);
         probes.push_back(probe);
     }
 
@@ -212,4 +215,23 @@ void XYPlot::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renderers)
     for (auto &a : xyplots) {
         renderers[1]->AddActor2D(a);
     }
+
+    auto &&adj_transfrom = [transfroms, bounds, probes](int i, int pos) {
+        transfroms[i]->Identity();
+        double pos_z = pos == 0 ? bounds[4] :
+                           pos == 1 ? (bounds[4] + bounds[5]) / 2 : bounds[5];
+        transfroms[i]->Translate((bounds[0] + bounds[1]) / 4 * (i + 1),
+                                 (bounds[2] + bounds[3]) / 2,
+                                 pos_z);
+        transfroms[i]->RotateZ(90);
+        transfroms[i]->Scale(4, 4, 4);
+
+        transfroms[i]->Update();
+        probes[i]->Update();
+    };
+    QTimer::singleShot(2000, [adj_transfrom]() {
+        adj_transfrom(0, 0);
+        qDebug() << "transfrom changed";
+    });
+
 }
