@@ -23,7 +23,9 @@
 #include <vtkTransform.h>
 #include <vtkTransformPolyDataFilter.h>
 #include <vtkDataSetSurfaceFilter.h>
+#include <vtkMultiBlockDataSet.h>
 #include <QTimer>
+#include <QDir>
 
 void CreateFakeStructuredGrid(vtkSmartPointer<vtkStructuredGrid> sgrid, int dims[3])
 {
@@ -91,6 +93,16 @@ void XYPlot::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renderers)
     int dims[3] = {12, 6, 3};
     CreateFakeStructuredGrid(sgrid, dims);
 
+    auto pl3d = vtkSmartPointer<vtkMultiBlockPLOT3DReader>::New();
+    pl3d->SetXYZFileName(Helper::path("combxyz.bin"));
+    pl3d->SetQFileName(Helper::path("combq.bin"));
+    pl3d->SetScalarFunctionNumber(100);
+    pl3d->SetVectorFunctionNumber(202);
+    pl3d->Update();
+
+    sgrid = dynamic_cast<vtkStructuredGrid *>(pl3d->GetOutput()->GetBlock(0));
+
+
     /// -----------------3D
     // outline
     auto out_line = vtkSmartPointer<vtkStructuredGridOutlineFilter>::New();
@@ -125,9 +137,9 @@ void XYPlot::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renderers)
     for (int i = 0; i < 3; ++i) {
         auto transfrom = vtkSmartPointer<vtkTransform>::New();
         transfrom->Identity();
-        transfrom->Translate((bounds[0] + bounds[1]) / 4 * (i + 1),
+        transfrom->Translate((bounds[0] + bounds[1]) / 5 * (i + 1),
                              (bounds[2] + bounds[3]) / 2,
-                             (bounds[5])/*bounds[4] + bounds[5]) / 2*/);
+                             (bounds[4] + bounds[5]) / 2);
         transfrom->RotateZ(90);
         transfrom->Scale(4, 4, 4);
 
@@ -229,9 +241,9 @@ void XYPlot::Draw(std::vector<vtkSmartPointer<vtkRenderer>> renderers)
         transfroms[i]->Update();
         probes[i]->Update();
     };
-    QTimer::singleShot(2000, [adj_transfrom]() {
-        adj_transfrom(0, 0);
-        qDebug() << "transfrom changed";
-    });
+    // QTimer::singleShot(2000, [adj_transfrom]() {
+    //     adj_transfrom(0, 0);
+    //     qDebug() << "transfrom changed";
+    // });
 
 }

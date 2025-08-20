@@ -75,3 +75,7 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 ```
 
 ![image-20250818171716487](readme26-50.assets/image-20250818171716487.png)
+
+使用官方data文件,而不是假数据
+
+![image-20250820113925821](readme26-50.assets/image-20250820113925821.png)

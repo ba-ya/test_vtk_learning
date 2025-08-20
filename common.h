@@ -1,6 +1,7 @@
 ﻿#ifndef COMMON_H
 #define COMMON_H
 
+#include <QDir>
 #include <QRegularExpression>
 #include <QString.h>
 #include <vtkActor.h>
@@ -9,6 +10,11 @@
 #include <vtkSmartPointer.h>
 
 namespace Helper {
+static const char * path(const QString &file_name) {
+    QString dir_data = "D:/0work/Qt/test_vtk_learning/Data";
+    return QDir(dir_data).absoluteFilePath(file_name).toUtf8().constData();
+}
+
 static std::tuple<double, double, double> adj_rgb(QString hex_rgb) {
     static QRegularExpression reg("^#([\\da-fA-F]{2})([\\da-fA-F]{2})([\\da-fA-F]{2})");
     auto match = reg.match(hex_rgb);
