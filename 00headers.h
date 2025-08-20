@@ -132,4 +132,8 @@ namespace XYPlot {
 void Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders);
 }
 
+namespace ProbeCombustor3d {
+void Draw(vtkRenderer* renderer);
+}
+
 #endif // _1_2D_CELLS_H

@@ -187,6 +187,8 @@ void Func1::do_something(QString name_class)
     } else if (name_class == "XYPlot") {
         resize_render(2, 1, 2);
         XYPlot::Draw(renders);
+    } else if (name_class == "ProbeCombustor3d") {
+        ProbeCombustor3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

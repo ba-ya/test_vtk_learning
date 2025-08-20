@@ -7,6 +7,7 @@
 - [30, PolarAxesActor2d](#30-PolarAxesActor2d)
 - [31, TextOrigin3d](#31-TextOrigin3d)
 - [32, XYPlot](#32-XYPlot)
+- [33, ProbeCombustor3d](#33-ProbeCombustor3d)
 # 26, RegularPolygonSource2d
 
 [回到顶部](#tip)
@@ -79,3 +80,9 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 使用官方data文件,而不是假数据
 
 ![image-20250820113925821](readme26-50.assets/image-20250820113925821.png)
+
+# 33, ProbeCombustor3d
+
+[回到顶部](#tip)
+
+![image-20250820150141494](readme26-50.assets/image-20250820150141494.png)
