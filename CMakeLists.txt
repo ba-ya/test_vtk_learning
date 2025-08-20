@@ -71,6 +71,7 @@ set(EXAMPLE
   examples/26-50/31TextOrigin.cpp
   examples/26-50/32XYPlot.cpp
   examples/26-50/33ProbeCombustor.cpp
+  examples/26-50/34ColorIsosurface.cpp
 )
 
 set(PROJECT_SOURCES

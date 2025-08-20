@@ -189,6 +189,8 @@ void Func1::do_something(QString name_class)
         XYPlot::Draw(renders);
     } else if (name_class == "ProbeCombustor3d") {
         ProbeCombustor3d::Draw(m_render);
+    } else if (name_class == "ColorIsosurface3d") {
+        ColorIsosurface3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

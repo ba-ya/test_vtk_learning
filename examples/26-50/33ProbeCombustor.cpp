@@ -24,6 +24,7 @@ void ProbeCombustor3d::Draw(vtkRenderer *renderer)
     pl3d->SetQFileName(Helper::path("combq.bin"));
     pl3d->SetScalarFunctionNumber(100);
     pl3d->SetVectorFunctionNumber(202);
+    pl3d->AddFunction(153);
     pl3d->Update();
 
     auto sg = dynamic_cast<vtkStructuredGrid *>(pl3d->GetOutput()->GetBlock(0));
