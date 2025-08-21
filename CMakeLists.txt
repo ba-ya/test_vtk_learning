@@ -73,6 +73,7 @@ set(EXAMPLE
   examples/26-50/33ProbeCombustor.cpp
   examples/26-50/34ColorIsosurface.cpp
   examples/26-50/35BrownianPoints.cpp
+  examples/26-50/36ColorMapToLUT.cpp
 )
 
 set(PROJECT_SOURCES

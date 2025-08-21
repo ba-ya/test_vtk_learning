@@ -193,6 +193,8 @@ void Func1::do_something(QString name_class)
         ColorIsosurface3d::Draw(m_render);
     } else if (name_class == "BrownianPoints3d") {
         BrownianPoints3d::Draw(m_render);
+    } else if (name_class == "ColorMapToLUT3d") {
+        ColorMapToLUT3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

@@ -103,6 +103,10 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 
 为每个点添加一个随机向量(模拟粒子的布朗运动)
 
-
-
 ![image-20250821100111910](readme26-50.assets/image-20250821100111910.png)
+
+# 36, ColorMapToLUT3d
+
+[回到顶部](#tip)
+
+![image-20250821160751844](readme26-50.assets/image-20250821160751844.png)
