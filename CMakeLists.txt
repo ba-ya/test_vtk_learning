@@ -72,6 +72,7 @@ set(EXAMPLE
   examples/26-50/32XYPlot.cpp
   examples/26-50/33ProbeCombustor.cpp
   examples/26-50/34ColorIsosurface.cpp
+  examples/26-50/35BrownianPoints.cpp
 )
 
 set(PROJECT_SOURCES

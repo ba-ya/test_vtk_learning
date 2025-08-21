@@ -9,6 +9,7 @@
 - [32, XYPlot](#32-XYPlot)
 - [33, ProbeCombustor3d](#33-ProbeCombustor3d)
 - [34, ColorIsosurface3d](#34-ColorIsosurface3d)
+- [35, BrownianPoints3d](#35-BrownianPoints3d)
 # 26, RegularPolygonSource2d
 
 [回到顶部](#tip)
@@ -95,3 +96,13 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 [PLOT3D](./examples/readme_33PLOT3D.md) 
 
 ![image-20250820161021021](readme26-50.assets/image-20250820161021021.png)
+
+# 35, BrownianPoints3d
+
+[回到顶部](#tip)
+
+为每个点添加一个随机向量(模拟粒子的布朗运动)
+
+
+
+![image-20250821100111910](readme26-50.assets/image-20250821100111910.png)
