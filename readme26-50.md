@@ -10,6 +10,8 @@
 - [33, ProbeCombustor3d](#33-ProbeCombustor3d)
 - [34, ColorIsosurface3d](#34-ColorIsosurface3d)
 - [35, BrownianPoints3d](#35-BrownianPoints3d)
+- [36, ColorMapToLUT3d](#36-ColorMapToLUT3d)
+- [37, ConstrainedDelaunay2D](#37-ConstrainedDelaunay2D)
 # 26, RegularPolygonSource2d
 
 [回到顶部](#tip)
@@ -110,3 +112,9 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 [回到顶部](#tip)
 
 ![image-20250821160751844](readme26-50.assets/image-20250821160751844.png)
+
+# 37, ConstrainedDelaunay2D
+
+[回到顶部](#tip)
+
+![image-20250822111239529](readme26-50.assets/image-20250822111239529.png)
