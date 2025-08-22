@@ -12,6 +12,7 @@
 - [35, BrownianPoints3d](#35-BrownianPoints3d)
 - [36, ColorMapToLUT3d](#36-ColorMapToLUT3d)
 - [37, ConstrainedDelaunay2D](#37-ConstrainedDelaunay2D)
+- [38, Delaunay2D](#38-Delaunay2D)
 # 26, RegularPolygonSource2d
 
 [回到顶部](#tip)
@@ -118,3 +119,9 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 [回到顶部](#tip)
 
 ![image-20250822111239529](readme26-50.assets/image-20250822111239529.png)
+
+# 38, Delaunay2D
+
+[回到顶部](#tip)
+
+![image-20250822151137349](readme26-50.assets/image-20250822151137349.png)

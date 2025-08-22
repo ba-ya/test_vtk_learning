@@ -197,6 +197,8 @@ void Func1::do_something(QString name_class)
         ColorMapToLUT3d::Draw(m_render);
     } else if (name_class == "ConstrainedDelaunay2D") {
         ConstrainedDelaunay2D::Draw(m_render);
+    } else if (name_class == "Delaunay2D") {
+        Delaunay2D::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

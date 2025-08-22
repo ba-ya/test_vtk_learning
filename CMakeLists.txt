@@ -75,6 +75,7 @@ set(EXAMPLE
   examples/26-50/35BrownianPoints.cpp
   examples/26-50/36ColorMapToLUT.cpp
   examples/26-50/37ConstrainedDelaunay2D.cpp
+  examples/26-50/38Delaunay2D.cpp
 )
 
 set(PROJECT_SOURCES

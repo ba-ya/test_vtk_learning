@@ -152,5 +152,9 @@ namespace ConstrainedDelaunay2D {
 void Draw(vtkRenderer* renderer);
 }
 
+namespace Delaunay2D {
+void Draw(vtkRenderer* renderer);
+}
+
 
 #endif // _1_2D_CELLS_H
