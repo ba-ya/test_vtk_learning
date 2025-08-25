@@ -6,6 +6,7 @@
 #include <vtkElevationFilter.h>
 #include <vtkNamedColors.h>
 #include <vtkPolyDataMapper.h>
+#include <vtkScalarBarActor.h>
 
 namespace {
 vtkSmartPointer<vtkDiscretizableColorTransferFunction> GetCTF();
@@ -50,7 +51,13 @@ void ColorMapToLUT3d::Draw(vtkRenderer *renderer)
     auto actor = vtkSmartPointer<vtkActor>::New();
     actor->SetMapper(mapper);
 
+    auto scalar_bar = vtkSmartPointer<vtkScalarBarActor>::New();
+    scalar_bar->SetLookupTable(ctf);
+    scalar_bar->SetPosition(.02, 0.2);
+    scalar_bar->SetPosition2(.15, .6);
+
     renderer->AddActor(actor);
+    renderer->AddActor(scalar_bar);
 }
 
 namespace {
