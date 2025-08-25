@@ -14,6 +14,7 @@
 - [37, ConstrainedDelaunay2D](#37-ConstrainedDelaunay2D)
 - [38, Delaunay2D](#38-Delaunay2D)
 - [39, DetermineActorType3d](#39-DetermineActorType3d)
+- [40, PCADemo2d](#40-PCADemo2d)
 # 26, RegularPolygonSource2d
 
 [回到顶部](#tip)
@@ -132,3 +133,9 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 [回到顶部](#tip)
 
 ![image-20250822163124586](readme26-50.assets/image-20250822163124586.png)
+
+# 40, PCADemo2d
+
+[回到顶部](#tip)
+
+![image-20250825114257558](readme26-50.assets/image-20250825114257558.png)

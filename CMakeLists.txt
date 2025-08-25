@@ -77,6 +77,7 @@ set(EXAMPLE
   examples/26-50/37ConstrainedDelaunay2D.cpp
   examples/26-50/38Delaunay2D.cpp
   examples/26-50/39DetermineActorType.cpp
+  examples/26-50/40PCADemo.cpp
 )
 
 set(PROJECT_SOURCES

@@ -160,5 +160,9 @@ namespace DetermineActorType3d {
 void Draw(vtkRenderer* renderer);
 }
 
+namespace PCADemo2d {
+void Draw(std::vector<vtkSmartPointer<vtkRenderer>> renders);
+}
+
 
 #endif // _1_2D_CELLS_H
