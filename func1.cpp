@@ -201,9 +201,11 @@ void Func1::do_something(QString name_class)
         Delaunay2D::Draw(m_render);
     } else if (name_class == "DetermineActorType3d") {
         DetermineActorType3d::Draw(m_render);
-    }  else if (name_class == "PCADemo2d") {
+    } else if (name_class == "PCADemo2d") {
         resize_render(2, 2, 1);
         PCADemo2d::Draw(renders);
+    } else if (name_class == "ShepardMethod3d") {
+        ShepardMethod3d::Draw(m_render);
     } else {
         qDebug() << name_class << "not achive";
         return;

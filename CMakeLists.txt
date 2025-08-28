@@ -78,6 +78,7 @@ set(EXAMPLE
   examples/26-50/38Delaunay2D.cpp
   examples/26-50/39DetermineActorType.cpp
   examples/26-50/40PCADemo.cpp
+  examples/26-50/41ShepardMethod.cpp
 )
 
 set(PROJECT_SOURCES

@@ -15,6 +15,7 @@
 - [38, Delaunay2D](#38-Delaunay2D)
 - [39, DetermineActorType3d](#39-DetermineActorType3d)
 - [40, PCADemo2d](#40-PCADemo2d)
+- [41, ShepardMethod3d](#41-ShepardMethod3d)
 # 26, RegularPolygonSource2d
 
 [回到顶部](#tip)
@@ -139,3 +140,12 @@ text_actor->SetCamera(renderer->GetActiveCamera());
 [回到顶部](#tip)
 
 ![image-20250825114257558](readme26-50.assets/image-20250825114257558.png)
+
+# 41, ShepardMethod3d
+
+[回到顶部](#tip)
+
+Shepard插值
+
+![image-20250828152056440](readme26-50.assets/image-20250828152056440.png)
+
