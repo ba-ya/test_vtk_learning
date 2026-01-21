@@ -94,6 +94,8 @@ void EllipticalCylinder3d::Draw(vtkRenderer *renderer)
     /// z, x cross arbitrary
     // 随机向量,目的是与x不平行(使用随机数,概率很小的)
     auto rng = vtkSmartPointer<vtkMinimalStandardRandomSequence>::New();
+    // seed值是任意值都可以,
+    // 但固定使用某个数字可以保证每次生成的随机数是一样的, 方便测试
     rng->SetSeed(8775070);
     auto max_r = 10;
     double arbitrary[3];
@@ -111,21 +113,21 @@ void EllipticalCylinder3d::Draw(vtkRenderer *renderer)
 
     // transform
     auto matrix = vtkSmartPointer<vtkMatrix4x4>::New();
+    // 单位矩阵, 对角线是1
     matrix->Identity();
     for (int i = 0; i < 3; ++i) {
-        matrix->SetElement(i, 0, normalize_x[i]);
-        matrix->SetElement(i, 1, normalize_y[i]);
-        matrix->SetElement(i, 2, normalize_z[i]);
+        matrix->SetElement(i, 0, normalize_x[i] * length);
+        matrix->SetElement(i, 1, normalize_y[i] * length);
+        matrix->SetElement(i, 2, normalize_z[i] * length);
     }
     auto transform = vtkSmartPointer<vtkTransform>::New();
-    transform->SetMatrix(matrix);
 #if 0
-    // transform->PostMultiply();
-    // transform->Translate(0, -center_y, center_x);
-#else
-    transform->Scale(length, length, length); // 局部坐标系(matrix)下缩放
-    transform->PostMultiply(); // 之后的操作在世界坐标系下进行
+    transform->SetMatrix(matrix); // 清空之前的变换
+    transform->PostMultiply(); // 后乘,局部坐标系
     transform->Translate(start_point);
+#else
+    transform->Translate(start_point);
+    transform->Concatenate(matrix); // 接着之前的变换,叠加矩阵
 #endif
 
     auto arrow_source = vtkSmartPointer<vtkArrowSource>::New();
